@@ -1,0 +1,18 @@
+{
+  "name": "nodejs-backend-roadmap",
+  "version": "1.0.0",
+  "description": "Bem-vindo ao repositório central da formação acelerada em desenvolvimento Backend com **Node.js**. Este espaço foi desenhado para estruturar a transição técnica de **Frontend Developer** para **Backend Developer**, com foco imediato na aplicação prática em ambiente corporativo.",
+  "main": "index.js",
+  "scripts": {
+    "sysinfo": "tsx src/system-info.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
