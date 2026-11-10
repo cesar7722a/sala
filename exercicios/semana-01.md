@@ -91,15 +91,56 @@ Praticar leitura de variáveis de ambiente e validação defensiva logo no momen
 3. Tipar o objecto de retorno com uma interface `AppConfig`.
 
 ### Critérios de Avaliação
-- [ ] Falha com mensagem explicativa se faltar uma variável obrigatória.
-- [ ] Atribui valores por defeito para variáveis opcionais (ex.: `PORT = 3000` se não informada).
-- [ ] Tipagem TypeScript rigorosa.
+- [x] Falha com mensagem explicativa se faltar uma variável obrigatória.
+- [x] Atribui valores por defeito para variáveis opcionais (ex.: `PORT = 3000` se não informada).
+- [x] Tipagem TypeScript rigorosa.
 
 ### Espaço para Solução e Observações
 ```typescript
-// Cola a tua solução aqui
+import process from "node:process";
+
+export interface AppConfig {
+  port: number;
+  nodeEnv: "development" | "production" | "test";
+  databaseUrl: string;
+}
+
+export function loadConfig(): AppConfig {
+  const databaseUrl = process.env.DATABASE_URL;
+
+  if (!databaseUrl) {
+    console.error(
+      "❌ [ERRO FATAL]: A variável DATABASE_URL é obrigatória e não foi definida!",
+    );
+    console.error(
+      "👉 Define a variável no teu ficheiro .env ou no ambiente antes de iniciar.",
+    );
+    process.exit(1);
+  }
+
+  const port = Number(process.env.PORT) || 3000;
+
+  const rawNodeEnv = process.env.NODE_ENV;
+  const nodeEnv: AppConfig["nodeEnv"] =
+    rawNodeEnv === "production" || rawNodeEnv === "test"
+      ? rawNodeEnv
+      : "development";
+
+  return {
+    port,
+    nodeEnv,
+    databaseUrl,
+  };
+}
+
+const config = loadConfig();
+console.log("✅ Configuração carregada com sucesso:");
+console.table(config);
 ```
 **Observações e Aprendizados:**
+- Aplicação prática do padrão *Fail-Fast*: interceptar variáveis ausentes logo no arranque com `process.exit(1)` impede falhas silenciosas tardias.
+- Tipagem refinada no TypeScript com união de literais (`'development' | 'production' | 'test'`) e conversão defensiva de tipos numéricos (`Number(process.env.PORT) || 3000`).
+- Criação e versionamento de `.env.example` para documentar o contrato de variáveis de ambiente do projecto.
 
 ---
 

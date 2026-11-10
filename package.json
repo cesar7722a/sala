@@ -4,7 +4,8 @@
   "description": "Bem-vindo ao repositório central da formação acelerada em desenvolvimento Backend com **Node.js**. Este espaço foi desenhado para estruturar a transição técnica de **Frontend Developer** para **Backend Developer**, com foco imediato na aplicação prática em ambiente corporativo.",
   "main": "index.js",
   "scripts": {
-    "sysinfo": "tsx src/system-info.ts"
+    "sysinfo": "tsx src/system-info.ts",
+    "config:check": "tsx src/config.ts"
   },
   "keywords": [],
   "author": "",

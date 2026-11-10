@@ -7,9 +7,9 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 ## 1. Visão Geral do Progresso
 
 - **Estado Actual:** 🔄 Semana 01 em Curso (Fase 1: Fundamentos)
-- **Horas Acumuladas:** 1.5 / 108 horas previstas (1h30 concluída)
+- **Horas Acumuladas:** 3.0 / 108 horas previstas (3h00 concluídas)
 - **Semanas Concluídas:** 0 / 12 semanas
-- **Exercícios Concluídos:** 1 (Exercício 1.1)
+- **Exercícios Concluídos:** 2 (Exercícios 1.1 e 1.2)
 - **Funcionalidades Aplicadas na Empresa:** 0
 
 ---
@@ -18,7 +18,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 | Semana | Tema Principal | Horas Dedicadas | Estado | Avaliação / Nota | Data de Conclusão |
 | :---: | :--- | :---: | :---: | :---: | :---: |
-| **01** | Node.js, V8, libuv e Ambiente TypeScript | 1.5 / 9h | 🔄 Em Curso | Ambiente e Exercício 1.1 validados | - |
+| **01** | Node.js, V8, libuv e Ambiente TypeScript | 3.0 / 9h | 🔄 Em Curso | Exercícios 1.1 e 1.2 validados com sucesso | - |
 | **02** | JavaScript Assíncrono, Event Loop e Streams | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **03** | Protocolo HTTP, REST e Express.js | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **04** | Arquitectura Controller-Service-Repository & SOLID | 0 / 9h | ⏳ Por Iniciar | - | - |
@@ -40,6 +40,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 | Data | Semana | Exercício / Desafio | Status | Observações / Feedback |
 | :---: | :---: | :--- | :---: | :--- |
 | 2026-11-09 | Semana 01 | Exercício 1.1: Diagnóstico de Ambiente | ✅ Concluído | Resolução de módulos com `NodeNext`, `types: ["node"]` e `node:os`/`node:process`. |
+| 2026-11-10 | Semana 01 | Exercício 1.2: Gerenciador de Configuração | ✅ Concluído | Implementação do padrão Fail-Fast com `process.exit(1)`, tipagem `AppConfig` e `.env.example`. |
 
 ---
 
@@ -61,4 +62,4 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 ## 6. Próximo Objectivo Imediato
 
-- [ ] Sessão de Terça-feira (Semana 01): [Exercício 1.2 — Gerenciador de Configuração com Validação (process.env, Fail-Fast e fs/promises)](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/exercicios/semana-01.md#exercício-12-gerenciador-de-configuração-com-validação-intermédio).
+- [ ] Sessão de Quarta-feira (Semana 01): [Exercício 1.3 — Manipulador Assíncrono de Ficheiros com Depuração no VS Code](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/exercicios/semana-01.md#exercício-13-manipulador-assíncrono-de-ficheiros-com-depuração-no-vs-code-avançado).
