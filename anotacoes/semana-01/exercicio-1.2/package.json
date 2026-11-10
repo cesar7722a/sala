@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sistemInfo": "tsx src/system-info.ts"
+    "sistemInfo": "tsx src/system-info.ts",
+    "config:check": "tsx src/config.ts"
   },
   "keywords": [],
   "author": "",
