@@ -164,12 +164,87 @@ Dominar a API `node:fs/promises`, caminhos com `node:path` e o sistema de depura
 4. Criar o ficheiro `.vscode/launch.json` configurado para executar e depurar este script.
 
 ### Critérios de Avaliação
-- [ ] Não bloqueia a execução síncrona (usa exclusivamente `fs/promises`).
-- [ ] Lida correctamente com directorias que não existem, lançando erro legível.
-- [ ] Breakpoint configurado no VS Code é atingido com sucesso durante a depuração.
+- [x] Não bloqueia a execução síncrona (usa exclusivamente `fs/promises`).
+- [x] Lida correctamente com directorias que não existem, lançando erro legível.
+- [x] Breakpoint configurado no VS Code é atingido com sucesso durante a depuração.
 
 ### Espaço para Solução e Observações
 ```typescript
-// Cola a tua solução aqui
+import fs from "node:fs/promises";
+import path from "node:path";
+import process from "node:process";
+
+interface FileReport {
+  fileName: string;
+  extension: string;
+  sizeBytes: number;
+  lineCount: number;
+}
+
+export async function analyzeDirectory(dirPath: string): Promise<void> {
+  const resolvedPath = path.resolve(dirPath);
+
+  try {
+    const entries = await fs.readdir(resolvedPath, { withFileTypes: true });
+    const reports: FileReport[] = [];
+    const textExtensions = [".ts", ".js", ".json", ".md", ".txt", ".env"];
+
+    for (const entry of entries) {
+      if (entry.isFile()) {
+        const ext = path.extname(entry.name);
+
+        if (textExtensions.includes(ext) || entry.name.startsWith(".")) {
+          const filePath = path.join(resolvedPath, entry.name);
+          const fileStat = await fs.stat(filePath);
+          const content = await fs.readFile(filePath, "utf-8");
+          const lineCount = content.split("\n").length;
+
+          reports.push({
+            fileName: entry.name,
+            extension: ext || "sem extensão",
+            sizeBytes: fileStat.size,
+            lineCount,
+          });
+        }
+      }
+    }
+
+    if (reports.length === 0) {
+      console.log(`⚠️ Nenhum ficheiro de texto encontrado na directoria: ${resolvedPath}`);
+      return;
+    }
+
+    console.log(`\n📂 Relatório de Análise da Pasta: ${resolvedPath}`);
+    console.table(reports);
+
+    const totalLines = reports.reduce((acc, curr) => acc + curr.lineCount, 0);
+    const totalBytes = reports.reduce((acc, curr) => acc + curr.sizeBytes, 0);
+
+    console.log(
+      `📊 Totais: ${reports.length} ficheiros | ${totalLines} linhas | ${(totalBytes / 1024).toFixed(2)} KB\n`,
+    );
+  } catch (error: any) {
+    if (error.code === "ENOENT") {
+      console.error(`❌ [ERRO]: A directoria "${resolvedPath}" não existe!`);
+    } else {
+      console.error(`❌ [ERRO INESPERADO]:`, error.message);
+    }
+    process.exit(1);
+  }
+}
+
+const targetDir = process.argv[2];
+
+if (!targetDir) {
+  console.error("❌ [ERRO]: Deves informar o caminho da pasta a analisar.");
+  console.log("👉 Exemplo de uso: npm run analyze src");
+  process.exit(1);
+}
+
+await analyzeDirectory(targetDir);
 ```
 **Observações e Aprendizados:**
+- Utilização estrita de `node:fs/promises` (`readdir`, `stat`, `readFile`) garantindo processamento I/O não-bloqueante delegado à libuv.
+- Manipulação segura e multiplataforma de caminhos através de `node:path` (`resolve`, `join`, `extname`).
+- Tratamento explícito de código de erro `ENOENT` (Error NO ENTIty / ficheiro ou directoria não encontrada).
+- Configuração do `.vscode/launch.json` permitindo inspecção interactiva de variáveis em memória e fluxo passo a passo com breakpoints.
