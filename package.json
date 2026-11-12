@@ -4,6 +4,9 @@
   "description": "Bem-vindo ao repositório central da formação acelerada em desenvolvimento Backend com **Node.js**. Este espaço foi desenhado para estruturar a transição técnica de **Frontend Developer** para **Backend Developer**, com foco imediato na aplicação prática em ambiente corporativo.",
   "main": "index.js",
   "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
     "sysinfo": "tsx src/system-info.ts",
     "config:check": "tsx src/config.ts",
     "analyze": "tsx src/file-analyzer.ts"

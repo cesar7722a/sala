@@ -32,6 +32,6 @@ export function getSystemMetrics(): SystemMetrics {
 }
 
 // Execução e exibição das métricas
-const metrics = getSystemMetrics();
-console.log("=== MÉTRICAS DO SISTEMA E RUNTIME NODE.JS ===");
-console.table(metrics);
+// const metrics = getSystemMetrics();
+// console.log("=== MÉTRICAS DO SISTEMA E RUNTIME NODE.JS ===");
+// console.table(metrics);

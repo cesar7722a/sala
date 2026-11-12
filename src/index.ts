@@ -1,7 +1,7 @@
 import { loadConfig } from "./config.js";
 import { getSystemMetrics } from "./system-info.js";
 
-async function bootstrap(params: void) {
+async function bootstrap(): Promise<void> {
   console.log("Iniciando o servdor backend... \n");
 
   const config = loadConfig();
