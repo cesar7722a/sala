@@ -11,7 +11,7 @@ interface SystemMetrics {
   uptimeHours: number;
 }
 
-function getSystemMetrics(): SystemMetrics {
+export function getSystemMetrics(): SystemMetrics {
   const nodeVersion = process.version;
   const platform = os.platform();
   const architecture = os.arch();
