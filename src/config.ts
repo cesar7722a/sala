@@ -34,6 +34,6 @@ export function loadConfig(): AppConfig {
   };
 }
 
-// const config = loadConfig();
-// console.log("Configuração carregada com sucesso:");
-// console.table(config);
+const config = loadConfig();
+console.log("Configuração carregada com sucesso:");
+console.table(config);

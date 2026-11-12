@@ -7,9 +7,9 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 ## 1. Visão Geral do Progresso
 
 - **Estado Actual:** 🔄 Semana 01 em Curso (Fase 1: Fundamentos)
-- **Horas Acumuladas:** 4.5 / 108 horas previstas (4h30 concluídas)
+- **Horas Acumuladas:** 6.0 / 108 horas previstas (6h00 concluídas)
 - **Semanas Concluídas:** 0 / 12 semanas
-- **Exercícios Concluídos:** 3 (Exercícios 1.1, 1.2 e 1.3 — Todos da Semana 01 concluídos!)
+- **Exercícios Concluídos:** 3 (Exercícios 1.1, 1.2 e 1.3 — Exercícios da Semana 01 concluídos!)
 - **Funcionalidades Aplicadas na Empresa:** 0
 
 ---
@@ -18,7 +18,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 | Semana | Tema Principal | Horas Dedicadas | Estado | Avaliação / Nota | Data de Conclusão |
 | :---: | :--- | :---: | :---: | :---: | :---: |
-| **01** | Node.js, V8, libuv e Ambiente TypeScript | 4.5 / 9h | 🔄 Em Curso | Exercícios 1.1, 1.2 e 1.3 validados com sucesso | - |
+| **01** | Node.js, V8, libuv e Ambiente TypeScript | 6.0 / 9h | 🔄 Em Curso | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos | - |
 | **02** | JavaScript Assíncrono, Event Loop e Streams | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **03** | Protocolo HTTP, REST e Express.js | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **04** | Arquitectura Controller-Service-Repository & SOLID | 0 / 9h | ⏳ Por Iniciar | - | - |
@@ -63,4 +63,4 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 ## 6. Próximo Objectivo Imediato
 
-- [ ] Sessão de Quinta-feira (Semana 01): Consolidação e aplicação dos fundamentos no projecto corporativo da empresa (análise do `package.json`, scripts de compilação, CJS vs ESM e variáveis de ambiente).
+- [ ] Sessão de Sexta-feira (Semana 01): Aplicação prática e análise da base de código da empresa (mapeamento do `package.json`, scripts de produção, CJS vs ESM e variáveis de ambiente na base corporativa).
