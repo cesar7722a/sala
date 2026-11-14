@@ -6,30 +6,30 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 ## 1. Visão Geral do Progresso
 
-- **Estado Actual:** 🔄 Semana 01 em Curso (Fase 1: Fundamentos)
-- **Horas Acumuladas:** 7.30 / 108 horas previstas (7h30 concluídas)
-- **Semanas Concluídas:** 0 / 12 semanas
-- **Exercícios Concluídos:** 3 (Exercícios 1.1, 1.2 e 1.3 — Exercícios da Semana 01 concluídos!)
-- **Funcionalidades Aplicadas na Empresa:** 0
+- **Estado Actual:** 🔄 Semana 01 em Curso (Fase 1: Fundamentos) — última secção em execução (Desafio `hospital_api`)
+- **Horas Acumuladas:** 9.0 / 108 horas previstas (9h00 concluídas)
+- **Semanas Concluídas:** 1 / 12 semanas
+- **Exercícios Concluídos:** 3 (Exercícios 1.1, 1.2 e 1.3 — concluídos)
+- **Funcionalidades Aplicadas no `hospital_api`:** 0 (fundação do repositório prevista para hoje)
 
 ---
 
 ## 2. Tabela de Acompanhamento das 12 Semanas
 
-| Semana | Tema Principal                                     | Horas Dedicadas |     Estado     |                     Avaliação / Nota                      | Data de Conclusão |
-| :----: | :------------------------------------------------- | :-------------: | :------------: | :-------------------------------------------------------: | :---------------: |
-| **01** | Node.js, V8, libuv e Ambiente TypeScript           |    7.30 / 9h    |  🔄 Em Curso   | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos |         -         |
-| **02** | JavaScript Assíncrono, Event Loop e Streams        |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **03** | Protocolo HTTP, REST e Express.js                  |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **04** | Arquitectura Controller-Service-Repository & SOLID |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **05** | PostgreSQL, Modelação e Prisma ORM                 |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **06** | Validação com Zod e Tratamento Global de Erros     |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **07** | Autenticação com JWT e Hashing Criptográfico       |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **08** | Autorização RBAC e OWASP API Security              |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **09** | Testes Automatizados com Vitest/Jest e Supertest   |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **10** | Performance, Caching com Redis e Filas com BullMQ  |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **11** | Contentorização Docker Multi-Stage e Produção      |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
-| **12** | Documentação OpenAPI/Swagger e Entrega Final       |     0 / 9h      | ⏳ Por Iniciar |                             -                             |         -         |
+| Semana | Tema Principal                                     | Horas Dedicadas |     Estado     |                                                             Avaliação / Nota                                                             | Data de Conclusão |
+| :----: | :------------------------------------------------- | :-------------: | :------------: | :--------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
+| **01** | Node.js, V8, libuv e Ambiente TypeScript           |     9 / 9h      |  ✅ Concluído  | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana | Data 2026-11-14   |
+| **02** | JavaScript Assíncrono, Event Loop e Streams        |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **03** | Protocolo HTTP, REST e Express.js                  |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **04** | Arquitectura Controller-Service-Repository & SOLID |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **05** | PostgreSQL, Modelação e Prisma ORM                 |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **06** | Validação com Zod e Tratamento Global de Erros     |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **07** | Autenticação com JWT e Hashing Criptográfico       |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **08** | Autorização RBAC e OWASP API Security              |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **09** | Testes Automatizados com Vitest/Jest e Supertest   |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **10** | Performance, Caching com Redis e Filas com BullMQ  |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **11** | Contentorização Docker Multi-Stage e Produção      |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| **12** | Documentação OpenAPI/Swagger e Entrega Final       |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
 
 _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 
@@ -45,22 +45,25 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 
 ---
 
-## 4. Funcionalidades Entregues no Projecto da Empresa
+## 4. Funcionalidades Entregues no `hospital_api`
 
-| Data | Funcionalidade / Módulo | Conceito Aplicado | PR / Estado | Impacto Técnico |
-| :--: | :---------------------- | :---------------- | :---------: | :-------------- |
-|  -   | -                       | -                 |      -      | -               |
+| Data | Funcionalidade / Módulo | Conceito Aplicado | Estado | Impacto Técnico |
+| :--: | :---------------------- | :---------------- | :----: | :-------------- |
+|  -   | -                       | -                 |   -    | -               |
 
 ---
 
 ## 5. Dificuldades Encontradas e Soluções Adoptadas
 
-|  Semana   | Desafio / Dificuldade                                           | Causa Raiz                                                                            | Como Foi Resolvido                                   |
-| :-------: | :-------------------------------------------------------------- | :------------------------------------------------------------------------------------ | :--------------------------------------------------- |
-| Semana 01 | TypeScript não encontrava tipos para `node:os` e `node:process` | O compilador necessita de mapeamento explícito de tipos do runtime no `tsconfig.json` | Adicionado `"types": ["node"]` nas `compilerOptions` |
+|  Semana   | Desafio / Dificuldade                                                | Causa Raiz                                                                            | Como Foi Resolvido                                                      |
+| :-------: | :------------------------------------------------------------------- | :------------------------------------------------------------------------------------ | :---------------------------------------------------------------------- |
+| Semana 01 | TypeScript não encontrava tipos para `node:os` e `node:process`      | O compilador necessita de mapeamento explícito de tipos do runtime no `tsconfig.json` | Adicionado `"types": ["node"]` nas `compilerOptions`                    |
+| Semana 01 | Uso de `catch (error: any)` no Exercício 1.3 viola a tipagem estrita | Uso de `any` para acessar `error.code` no tratamento de `ENOENT`                      | **Pendente:** refactorizar para `catch (error: unknown)` com type guard |
 
 ---
 
 ## 6. Próximo Objectivo Imediato
 
-- [ ] Sessão de Sexta-feira (Semana 01): Aplicação prática e análise da base de código da empresa (mapeamento do `package.json`, scripts de produção, CJS vs ESM e variáveis de ambiente na base corporativa).
+- [x] **Concluir a Semana 01 (sessão de sábado):** executar o Desafio Individual (`hospital_api`) — criar a fundação do repositório `hospital_api` (ESM, `tsconfig` estrito, scripts `dev/build/start`, `.env.example`, `.gitignore`, README com decisões técnicas). Ao concluir, atualizar horas para 9.0/9h, estado para ✅ e Data de Conclusão para 2026-11-14.
+- [ ] Corrigir o `catch (error: any)` → `unknown` + type guard no Exercício 1.3.
+- [ ] Iniciar a Semana 02: Event Loop na prática, Promises/async-await, Streams e Buffer — primeira fatia do `hospital_api`: importador CSV de doentes em streaming.
