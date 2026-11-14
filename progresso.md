@@ -55,15 +55,15 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 
 ## 5. Dificuldades Encontradas e Soluções Adoptadas
 
-|  Semana   | Desafio / Dificuldade                                                | Causa Raiz                                                                            | Como Foi Resolvido                                                      |
-| :-------: | :------------------------------------------------------------------- | :------------------------------------------------------------------------------------ | :---------------------------------------------------------------------- |
-| Semana 01 | TypeScript não encontrava tipos para `node:os` e `node:process`      | O compilador necessita de mapeamento explícito de tipos do runtime no `tsconfig.json` | Adicionado `"types": ["node"]` nas `compilerOptions`                    |
-| Semana 01 | Uso de `catch (error: any)` no Exercício 1.3 viola a tipagem estrita | Uso de `any` para acessar `error.code` no tratamento de `ENOENT`                      | **Pendente:** refactorizar para `catch (error: unknown)` com type guard |
+|  Semana   | Desafio / Dificuldade                                                | Causa Raiz                                                                            | Como Foi Resolvido                                                   |
+| :-------: | :------------------------------------------------------------------- | :------------------------------------------------------------------------------------ | :------------------------------------------------------------------- |
+| Semana 01 | TypeScript não encontrava tipos para `node:os` e `node:process`      | O compilador necessita de mapeamento explícito de tipos do runtime no `tsconfig.json` | Adicionado `"types": ["node"]` nas `compilerOptions`                 |
+| Semana 01 | Uso de `catch (error: any)` no Exercício 1.3 viola a tipagem estrita | Uso de `any` para acessar `error.code` no tratamento de `ENOENT`                      | Adicionado refactorizar para `catch (error: unknown)` com type guard |
 
 ---
 
 ## 6. Próximo Objectivo Imediato
 
 - [x] **Concluir a Semana 01 (sessão de sábado):** executar o Desafio Individual (`hospital_api`) — criar a fundação do repositório `hospital_api` (ESM, `tsconfig` estrito, scripts `dev/build/start`, `.env.example`, `.gitignore`, README com decisões técnicas). Ao concluir, atualizar horas para 9.0/9h, estado para ✅ e Data de Conclusão para 2026-11-14.
-- [ ] Corrigir o `catch (error: any)` → `unknown` + type guard no Exercício 1.3.
+- [x] Corrigir o `catch (error: any)` → `unknown` + type guard no Exercício 1.3.
 - [ ] Iniciar a Semana 02: Event Loop na prática, Promises/async-await, Streams e Buffer — primeira fatia do `hospital_api`: importador CSV de doentes em streaming.
