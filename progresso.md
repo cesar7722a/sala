@@ -16,20 +16,24 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 ## 2. Tabela de Acompanhamento das 12 Semanas
 
-| Semana | Tema Principal                                     | Horas Dedicadas |     Estado     |                                                             Avaliação / Nota                                                             | Data de Conclusão |
-| :----: | :------------------------------------------------- | :-------------: | :------------: | :--------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
-| **01** | Node.js, V8, libuv e Ambiente TypeScript           |     9 / 9h      |  ✅ Concluído  | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana | Data 2026-11-14   |
-| **02** | JavaScript Assíncrono, Event Loop e Streams        |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **03** | Protocolo HTTP, REST e Express.js                  |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **04** | Arquitectura Controller-Service-Repository & SOLID |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **05** | PostgreSQL, Modelação e Prisma ORM                 |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **06** | Validação com Zod e Tratamento Global de Erros     |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **07** | Autenticação com JWT e Hashing Criptográfico       |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **08** | Autorização RBAC e OWASP API Security              |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **09** | Testes Automatizados com Vitest/Jest e Supertest   |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **10** | Performance, Caching com Redis e Filas com BullMQ  |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **11** | Contentorização Docker Multi-Stage e Produção      |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
-| **12** | Documentação OpenAPI/Swagger e Entrega Final       |     0 / 9h      | ⏳ Por Iniciar |                                                                    -                                                                     | -                 |
+| Semana | Tema Principal                           | Horas Dedicadas |    Estado    |                                                             Avaliação / Nota                                                             | Data de Conclusão |
+| :----: | :--------------------------------------- | :-------------: | :----------: | :--------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
+| **01** | Node.js, V8, libuv e Ambiente TypeScript |     9 / 9h      | ✅ Concluído | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana | Data 2026-11-14   |
+
+| **02** | JavaScript Assíncrono, Event Loop e Streams | 1h30 / 9h | 🔄 Em Curso Iniciar | Exercícios 2.1 | entendo o javaScript Assícrono
+
+                                                               -                                                                     | -                 |
+
+| **03** | Protocolo HTTP, REST e Express.js | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **04** | Arquitectura Controller-Service-Repository & SOLID | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **05** | PostgreSQL, Modelação e Prisma ORM | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **06** | Validação com Zod e Tratamento Global de Erros | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **07** | Autenticação com JWT e Hashing Criptográfico | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **08** | Autorização RBAC e OWASP API Security | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **09** | Testes Automatizados com Vitest/Jest e Supertest | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **10** | Performance, Caching com Redis e Filas com BullMQ | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **11** | Contentorização Docker Multi-Stage e Produção | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **12** | Documentação OpenAPI/Swagger e Entrega Final | 0 / 9h | ⏳ Por Iniciar | - | - |
 
 _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 
@@ -37,11 +41,13 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 
 ## 3. Registo de Exercícios Concluídos
 
-|    Data    |  Semana   | Exercício / Desafio                               |    Status    | Observações / Feedback                                                                            |
-| :--------: | :-------: | :------------------------------------------------ | :----------: | :------------------------------------------------------------------------------------------------ |
-| 2026-11-09 | Semana 01 | Exercício 1.1: Diagnóstico de Ambiente            | ✅ Concluído | Resolução de módulos com `NodeNext`, `types: ["node"]` e `node:os`/`node:process`.                |
-| 2026-11-10 | Semana 01 | Exercício 1.2: Gerenciador de Configuração        | ✅ Concluído | Implementação do padrão Fail-Fast com `process.exit(1)`, tipagem `AppConfig` e `.env.example`.    |
-| 2026-11-11 | Semana 01 | Exercício 1.3: Analisador Assíncrono de Ficheiros | ✅ Concluído | Processamento não-bloqueante com `fs/promises`, caminhos com `node:path` e `.vscode/launch.json`. |
+|           Data           |  Semana   | Exercício / Desafio                               |    Status    | Observações / Feedback                                                                         |
+| :----------------------: | :-------: | :------------------------------------------------ | :----------: | :--------------------------------------------------------------------------------------------- |
+|        2026-11-09        | Semana 01 | Exercício 1.1: Diagnóstico de Ambiente            | ✅ Concluído | Resolução de módulos com `NodeNext`, `types: ["node"]` e `node:os`/`node:process`.             |
+|        2026-11-10        | Semana 01 | Exercício 1.2: Gerenciador de Configuração        | ✅ Concluído | Implementação do padrão Fail-Fast com `process.exit(1)`, tipagem `AppConfig` e `.env.example`. |
+|        2026-11-11        | Semana 01 | Exercício 1.3: Analisador Assíncrono de Ficheiros | ✅ Concluído | Processamento não-bloqueante com `fs/promises`, caminhos com `node:path`                       |
+| e `.vscode/launch.json`. |
+|        2026-11-16        | Semana 02 | Exercício 2.1: JavaScript Assíncrono              | ✅ Concluído | sequencia de executação `SetTimers, promises, async/await`                                     |
 
 ---
 
