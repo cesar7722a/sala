@@ -9,7 +9,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 - **Estado Actual:** 🔄 Semana 02 em Curso (Fase 1: Fundamentos) — JavaScript Assíncrono no Backend
 - **Horas Acumuladas:** 12.0 / 108 horas previstas (12h00 concluídas: 9h00 Semana 01 + 3h00 Semana 02)
 - **Semanas Concluídas:** 1 / 12 semanas
-- **Exercícios Concluídos:** 5 (Exercícios 1.1, 1.2, 1.3, 2.1 e 2.2 concluídos)
+- **Exercícios Concluídos:** 6 (Exercícios 1.1, 1.2, 1.3, 2.1, 2.2 e 2.3 concluídos)
 - **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (em preparação da fundação)
 
 ---
@@ -46,6 +46,7 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 | e `.vscode/launch.json`. |
 |        2026-11-16        | Semana 02 | Exercício 2.1: JavaScript Assíncrono              | ✅ Concluído | sequencia de executação `SetTimers, promises, async/await`                                     |
 |        2026-11-17        | Semana 02 | Exercício 2.2: Orquestrador com Tolerância        | ✅ Concluído | Concorrência paralela com `Promise.allSettled`, tipagem discriminada e tolerância a falhas.     |
+|        2026-11-17        | Semana 02 | Exercício 2.3: Processamento com Streams          | ✅ Concluído | Processamento contínuo de 50.000 linhas com `createReadStream`, `Transform` e `pipeline`. RAM: ~11MB. |
 
 ---
 

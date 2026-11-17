@@ -21,7 +21,13 @@
 ## 4. Explicação dos Conceitos
 [Explicação técnica e aprofundada dos mecanismos internos, sem superficialidades teóricas]
 
-## 5. Exemplos de Código
+## 5. Como Criar do Zero (Anatomia e Esqueleto Passo a Passo)
+- **Passo 1: O que importar e de onde vem:** (explicar cada import)
+- **Passo 2: O esqueleto mínimo funcional:** (código base mastigado)
+- **Passo 3: Anatomia dos parâmetros e retornos:** (o que significa cada argumento)
+- **Passo 4: Padrão de uso comum:** (como ligar com o resto da aplicação)
+
+## 6. Exemplos de Código Completos
 ```typescript
 // Exemplo prático e tipado demonstrando o conceito
 export function exemplo(): void {
@@ -29,12 +35,12 @@ export function exemplo(): void {
 }
 ```
 
-## 6. Análise do Funcionamento
+## 7. Análise do Funcionamento
 - O que acontece linha a linha?
 - Como o motor V8 ou o Node.js gerem a memória e o fluxo assíncrono neste caso?
 - Quais são os potenciais estrangulamentos ou armadilhas comuns?
 
-## 7. Exercícios Práticos
+## 8. Exercícios Práticos Guiados (com Scaffolding)
 1. **Exercício 1:** [Enunciado simples de fixação]
 2. **Exercício 2:** [Refactorização ou caso de borda]
 

@@ -11,7 +11,8 @@
     "config:check": "tsx src/config.ts",
     "analyze": "tsx src/file-analyzer.ts",
     "quiz": "tsx src/event-loop-quiz.ts",
-    "orchestrator": "tsx src/orchestrator.ts"
+    "orchestrator": "tsx src/orchestrator.ts",
+    "streams": "tsx src/stream-processor.ts"
   },
   "keywords": [],
   "author": "",

@@ -149,6 +149,37 @@ export async function runOrchestrator(): Promise<OrchestratorReport> {
 }
 ```
 
+### Exemplo 2: Criação Prática de Streams com `createReadStream`, `Transform` e `pipeline` (`src/stream-processor.ts`)
+
+```typescript
+import { createReadStream, createWriteStream } from "node:fs";
+import { pipeline } from "node:stream/promises";
+import { Transform } from "node:stream";
+
+// 1. Como criar a Transform Stream (filtro intermediário)
+const upperCaseTransform = new Transform({
+  transform(chunk: Buffer, _encoding, callback) {
+    try {
+      // Converte o chunk de Buffer binário para texto e aplica caixa alta
+      const transformed = chunk.toString("utf-8").toUpperCase();
+      // callback(erro, resultadoTransformado)
+      callback(null, transformed);
+    } catch (err) {
+      callback(err instanceof Error ? err : new Error(String(err)));
+    }
+  },
+});
+
+// 2. Como criar a leitura, escrita e orquestrar com pipeline
+export async function runStreamPipeline(inputFile: string, outputFile: string) {
+  await pipeline(
+    createReadStream(inputFile, { highWaterMark: 64 * 1024 }), // Abre a leitura em blocos de 64KB
+    upperCaseTransform,                                        // Processa bloco a bloco
+    createWriteStream(outputFile)                              // Grava no destino sem inundar a memória
+  );
+}
+```
+
 ---
 
 ## 6. Análise do Funcionamento e Armadilhas
