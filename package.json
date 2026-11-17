@@ -9,7 +9,9 @@
     "start": "node dist/index.js",
     "sysinfo": "tsx src/system-info.ts",
     "config:check": "tsx src/config.ts",
-    "analyze": "tsx src/file-analyzer.ts"
+    "analyze": "tsx src/file-analyzer.ts",
+    "quiz": "tsx src/event-loop-quiz.ts",
+    "orchestrator": "tsx src/orchestrator.ts"
   },
   "keywords": [],
   "author": "",

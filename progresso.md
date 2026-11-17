@@ -6,11 +6,11 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 ## 1. Visão Geral do Progresso
 
-- **Estado Actual:** 🔄 Semana 01 em Curso (Fase 1: Fundamentos) — última secção em execução (Desafio `hospital_api`)
-- **Horas Acumuladas:** 9.0 / 108 horas previstas (9h00 concluídas)
+- **Estado Actual:** 🔄 Semana 02 em Curso (Fase 1: Fundamentos) — JavaScript Assíncrono no Backend
+- **Horas Acumuladas:** 12.0 / 108 horas previstas (12h00 concluídas: 9h00 Semana 01 + 3h00 Semana 02)
 - **Semanas Concluídas:** 1 / 12 semanas
-- **Exercícios Concluídos:** 3 (Exercícios 1.1, 1.2 e 1.3 — concluídos)
-- **Funcionalidades Aplicadas no `hospital_api`:** 0 (fundação do repositório prevista para hoje)
+- **Exercícios Concluídos:** 5 (Exercícios 1.1, 1.2, 1.3, 2.1 e 2.2 concluídos)
+- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (em preparação da fundação)
 
 ---
 
@@ -19,10 +19,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 | Semana | Tema Principal                           | Horas Dedicadas |    Estado    |                                                             Avaliação / Nota                                                             | Data de Conclusão |
 | :----: | :--------------------------------------- | :-------------: | :----------: | :--------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
 | **01** | Node.js, V8, libuv e Ambiente TypeScript |     9 / 9h      | ✅ Concluído | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana | Data 2026-11-14   |
-
-| **02** | JavaScript Assíncrono, Event Loop e Streams | 1h30 / 9h | 🔄 Em Curso Iniciar | Exercícios 2.1 | entendo o javaScript Assícrono
-
-                                                               -                                                                     | -                 |
+| **02** | JavaScript Assíncrono, Event Loop e Streams | 3h / 9h | 🔄 Em Curso | Exercícios 2.1 (Event Loop Quiz) e 2.2 (Orquestrador com Promise.allSettled) concluídos. Teoria de Streams e Buffers iniciada. | - |
 
 | **03** | Protocolo HTTP, REST e Express.js | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **04** | Arquitectura Controller-Service-Repository & SOLID | 0 / 9h | ⏳ Por Iniciar | - | - |
@@ -48,6 +45,7 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 |        2026-11-11        | Semana 01 | Exercício 1.3: Analisador Assíncrono de Ficheiros | ✅ Concluído | Processamento não-bloqueante com `fs/promises`, caminhos com `node:path`                       |
 | e `.vscode/launch.json`. |
 |        2026-11-16        | Semana 02 | Exercício 2.1: JavaScript Assíncrono              | ✅ Concluído | sequencia de executação `SetTimers, promises, async/await`                                     |
+|        2026-11-17        | Semana 02 | Exercício 2.2: Orquestrador com Tolerância        | ✅ Concluído | Concorrência paralela com `Promise.allSettled`, tipagem discriminada e tolerância a falhas.     |
 
 ---
 

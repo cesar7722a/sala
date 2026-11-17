@@ -105,17 +105,68 @@ Dominar `Promise.allSettled` e evitar o comportamento de cancelamento rápido (_
 
 ### Critérios de Avaliação
 
-- [ ] Nenhuma excepção não tratada (_UnhandledPromiseRejection_).
-- [ ] Execução estritamente concorrente (tempo total próximo do serviço mais lento, e não a soma sequencial).
-- [ ] Resposta final tipada com precisão.
+- [x] Nenhuma excepção não tratada (_UnhandledPromiseRejection_).
+- [x] Execução estritamente concorrente (tempo total próximo do serviço mais lento, e não a soma sequencial).
+- [x] Resposta final tipada com precisão.
 
 ### Espaço para Solução e Observações
 
 ```typescript
-// Cola a tua solução aqui
+import process from "node:process";
+
+export interface ServiceResponse {
+  serviceId: number;
+  data: string;
+}
+
+export type OrchestratorReport = {
+  successful: ServiceResponse[];
+  failed: { serviceId: number; reason: string }[];
+};
+
+export async function fetchServiceData(
+  serviceId: number,
+): Promise<ServiceResponse> {
+  await new Promise((r) => setTimeout(r, 50 + serviceId * 20));
+
+  if (serviceId === 3) {
+    throw new Error(`Serviço ${serviceId} indisponível`);
+  }
+
+  return { serviceId, data: `payload-${serviceId}` };
+}
+
+export async function runOrchestrator(): Promise<OrchestratorReport> {
+  const ids = [1, 2, 3, 4, 5];
+
+  const results = await Promise.allSettled(
+    ids.map((id) => fetchServiceData(id)),
+  );
+
+  const report: OrchestratorReport = { successful: [], failed: [] };
+
+  results.forEach((result, index) => {
+    const serviceId = ids[index];
+    if (result.status === `fulfilled`) {
+      report.successful.push(result.value);
+    } else {
+      const reason =
+        result.reason instanceof Error
+          ? result.reason.message
+          : String(result.reason);
+      report.failed.push({ serviceId, reason });
+    }
+  });
+
+  return report;
+}
 ```
 
 **Observações e Aprendizados:**
+
+1. **`Promise.allSettled` vs `Promise.all`:** `Promise.all` teria rejeitado imediatamente ao atingir o `serviceId === 3`, cancelando e ignorando o resultado de todos os outros serviços. O `Promise.allSettled` permitiu tolerância a falhas.
+2. **Concorrência:** Com o `map`, todas as chamadas foram despoletadas simultaneamente. O tempo total de resposta medido foi de ~153ms (tempo do serviço mais lento: `50 + 5*20 = 150ms`), muito inferior aos 550ms do modelo sequencial.
+3. **TypeScript Type Narrowing:** O compilador diferencia os tipos com base em `result.status === 'fulfilled'`, permitindo aceder a `result.value` sem cast de tipo. Para o erro em `result.reason`, foi usada a verificação defensiva `instanceof Error`.
 
 ---
 

@@ -26,22 +26,28 @@ Este documento estabelece a ponte técnica entre a **Stack de Aprendizagem** pro
 
 ---
 
-## 2. Stack Real da Empresa (A Preencher/Actualizar)
+## 2. Stack Real da Empresa (Confirmada para a Plataforma de Vídeo-Aulas)
 
-> [!NOTE]
-> Esta secção será preenchida e afinada à medida que explorares ou partilhares as tecnologias e dependências do repositório da empresa. **Não inventamos ferramentas que a equipa não utiliza.**
+> [!IMPORTANT]
+> **Projecto:** Plataforma de Vídeo-Aulas com gestão de conteúdos de produtores e acesso pago para alunos.
+> **Responsabilidade:** Responsável integral por toda a configuração da arquitectura backend desde o zero.
+> **Alinhamento:** Toda a stack do roadmap foi validada e será aplicada no projecto corporativo.
 
-| Categoria | Tecnologia em Produção | Notas de Integração com o Plano |
+| Categoria | Tecnologia Adoptada | Papel na Plataforma de Vídeo-Aulas |
 | :--- | :--- | :--- |
-| **Runtime / Versão** | *A confirmar (ex.: Node.js 18 / 20)* | Alinhar a versão do Node local com a versão do servidor da empresa. |
-| **Linguagem** | *A confirmar (TypeScript / JS)* | Se for TypeScript, verificar se usam `strict: true` no `tsconfig.json`. |
-| **Framework Web** | *A confirmar (Express / NestJS / Fastify)* | Se usarem NestJS ou Fastify, adaptaremos os conceitos de rotas e middlewares. |
-| **Base de Dados** | *A confirmar (PostgreSQL / MySQL / etc.)* | Validar se o motor relacional coincide. |
-| **ORM / Data Access** | *A confirmar (Prisma / TypeORM / Knex / etc.)*| Priorizar o ORM em uso para os exercícios avançados de persistência. |
-| **Validação** | *A confirmar (Zod / Joi / Yup / Class-Validator)*| Mapear a biblioteca existente para não criar padrões divergentes. |
-| **Autenticação** | *A confirmar (JWT / Sessions / Auth0)* | Compreender como as requisições autenticadas são validadas actualmente. |
-| **Testes** | *A confirmar (Jest / Mocha / Vitest)* | Escrever testes respeitando o test runner já configurado no projecto. |
-| **DevOps / Infra** | *A confirmar (Docker / Compose / Cloud)* | Verificar como a equipa corre a aplicação localmente. |
+| **Runtime** | Node.js (LTS v24 / v20+) | Backend não bloqueante com I/O assíncrono para streaming e APIs. |
+| **Linguagem** | TypeScript (`strict: true`) | Contratos fortes para entidades de pagamentos, cursos, aulas e utilizadores. |
+| **Framework Web** | Express.js | Roteamento RESTful para catálogo de cursos, aulas, inscrições e webhooks. |
+| **Base de Dados** | PostgreSQL | Persistência relacional para transacções ACID de compras, utilizadores e permissões. |
+| **ORM** | Prisma ORM | Modelação declarativa e migrações tipadas ponta a ponta. |
+| **Validação** | Zod | Validação rigorosa de payloads de registo, compras e metadados de vídeo. |
+| **Autenticação** | JWT + Argon2 | Controlo de acesso stateless e hashing ultra-seguro de senhas. |
+| **Armazenamento de Vídeo** | Object Storage (S3 / R2 / MinIO) | Armazenamento de ficheiros de vídeo pesados com streaming assíncrono. |
+| **Processamento Assíncrono**| BullMQ + Redis | Transcodificação e processamento de vídeos fora do ciclo da requisição HTTP. |
+| **Cache em Memória** | Redis | Caching de catálogo de cursos e controlo de sessões/taxa de requisições. |
+| **Testes** | Vitest + Supertest | Testes automatizados das regras de negócio de pagamentos e autorização. |
+| **Infraestrutura** | Docker & Docker Compose | Contentorização completa da API, PostgreSQL e Redis para desenvolvimento e produção. |
+| **Documentação** | Swagger / OpenAPI 3.0 | Contrato interactivo para consumo pela equipa de Frontend (React/Next.js). |
 
 ---
 
