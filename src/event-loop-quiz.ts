@@ -1,27 +1,55 @@
-console.log("A");
+// teste 01
 
-setTimeout(() => {
+// console.log("A");
+
+// setTimeout(() => {
+//   console.log("B");
+
+//   process.nextTick(() => {
+//     console.log("C");
+//   });
+
+//   Promise.resolve().then(() => {
+//     console.log("D");
+//   });
+// }, 0);
+
+// Promise.resolve().then(() => {
+//   console.log("E");
+
+//   process.nextTick(() => {
+//     console.log("F");
+//   });
+// });
+
+// process.nextTick(() => {
+//   console.log("G");
+// });
+
+// console.log("H");
+
+async function getUser() {
+  console.log("A");
+  throw new Error("Erro no utilizador");
+}
+
+async function getProfile() {
   console.log("B");
+  await getUser();
+  console.log("C");
+}
 
-  process.nextTick(() => {
-    console.log("C");
-  });
-
-  Promise.resolve().then(() => {
+async function main() {
+  try {
     console.log("D");
-  });
-}, 0);
+    await getProfile();
+    console.log("E");
+  } catch (error: any) {
+    console.log("Catch:", error.message);
+  }
+  console.log("F");
+}
 
-Promise.resolve().then(() => {
-  console.log("E");
-
-  process.nextTick(() => {
-    console.log("F");
-  });
-});
-
-process.nextTick(() => {
-  console.log("G");
-});
-
-console.log("H");
+main();
+console.log("G");
+// D, B, A, G, Catch, C, E, F
