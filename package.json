@@ -12,7 +12,8 @@
     "analyze": "tsx src/file-analyzer.ts",
     "quiz": "tsx src/event-loop-quiz.ts",
     "orchestrator": "tsx src/orchestrator.ts",
-    "streams": "tsx src/stream-processor.ts"
+    "streams": "tsx src/stream-processor.ts",
+    "safe-async": "tsx src/safe-async.ts"
   },
   "keywords": [],
   "author": "",
