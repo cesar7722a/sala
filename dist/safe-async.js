@@ -34,7 +34,10 @@ async function main() {
     console.log("--- CENÁRIO 2: Aluno sem Pagamento (ID 999 - Simulação de Falha) ---");
     await processarInscricao(999);
 }
-main();
+const isMain = process.argv[1]?.endsWith("safe-async.ts");
+if (isMain) {
+    main();
+}
 // Marcamos como 'async' para devolver uma Promise real com tipagem estrita
 async function verificarPagamento(id) {
     if (id === 101) {

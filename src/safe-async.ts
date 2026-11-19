@@ -49,7 +49,10 @@ async function main() {
   await processarInscricao(999);
 }
 
-main();
+const isMain = process.argv[1]?.endsWith("safe-async.ts");
+if (isMain) {
+  main();
+}
 
 interface PagamentoInfo {
   alunoId: number;

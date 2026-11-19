@@ -7,9 +7,9 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 ## 1. Visão Geral do Progresso
 
 - **Estado Actual:** 🔄 Semana 02 em Curso (Fase 1: Fundamentos) — JavaScript Assíncrono no Backend
-- **Horas Acumuladas:** 13.5 / 108 horas previstas (13h30 concluídas: 9h00 Semana 01 + 4h30 Semana 02)
+- **Horas Acumuladas:** 15.0 / 108 horas previstas (15h00 concluídas: 9h00 Semana 01 + 6h00 Semana 02)
 - **Semanas Concluídas:** 1 / 12 semanas
-- **Exercícios Concluídos:** 6 (Exercícios 1.1 a 2.3 concluídos) + Módulo Utilitário `safeAsync` implementado
+- **Exercícios e Módulos Concluídos:** 6 exercícios formais + `safeAsync` + Pipeline de Ingestão de Vídeo (`video-ingestion.ts`)
 - **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (em preparação da fundação)
 
 ---
@@ -19,7 +19,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 | Semana | Tema Principal                           | Horas Dedicadas |    Estado    |                                                             Avaliação / Nota                                                             | Data de Conclusão |
 | :----: | :--------------------------------------- | :-------------: | :----------: | :--------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
 | **01** | Node.js, V8, libuv e Ambiente TypeScript |     9 / 9h      | ✅ Concluído | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana | Data 2026-11-14   |
-| **02** | JavaScript Assíncrono, Event Loop e Streams | 4h30 / 9h | 🔄 Em Curso | Exercícios 2.1 a 2.3 e utilitário `safeAsync` (Result Pattern) concluídos. Domínio do Event Loop, Streams e resiliência assíncrona. | - |
+| **02** | JavaScript Assíncrono, Event Loop e Streams | 6h / 9h | 🔄 Em Curso | Exercícios 2.1 a 2.3, `safeAsync` e ingestão de vídeo (Magic Bytes + SHA-256 via Stream) concluídos com sucesso. | - |
 
 | **03** | Protocolo HTTP, REST e Express.js | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **04** | Arquitectura Controller-Service-Repository & SOLID | 0 / 9h | ⏳ Por Iniciar | - | - |

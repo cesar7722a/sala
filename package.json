@@ -13,7 +13,8 @@
     "quiz": "tsx src/event-loop-quiz.ts",
     "orchestrator": "tsx src/orchestrator.ts",
     "streams": "tsx src/stream-processor.ts",
-    "safe-async": "tsx src/safe-async.ts"
+    "safe-async": "tsx src/safe-async.ts",
+    "video:ingest": "tsx src/video-ingestion.ts"
   },
   "keywords": [],
   "author": "",
