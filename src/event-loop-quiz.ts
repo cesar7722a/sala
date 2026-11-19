@@ -52,4 +52,4 @@ async function main() {
 
 main();
 console.log("G");
-// D, B, A, G, Catch, C, E, F
+// D, B, A, error.message, F, G

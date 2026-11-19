@@ -38,6 +38,7 @@ async function liberarAcessoCurso(
 ): Promise<{ cursoId: number; liberado: boolean }> {
   return { cursoId, liberado: true };
 }
+
 async function main() {
   console.log("--- CENÁRIO 1: Aluno com Pagamento Válido (ID 101) ---");
   await processarInscricao(101);
