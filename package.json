@@ -14,7 +14,8 @@
     "orchestrator": "tsx src/orchestrator.ts",
     "streams": "tsx src/stream-processor.ts",
     "safe-async": "tsx src/safe-async.ts",
-    "video:ingest": "tsx src/video-ingestion.ts"
+    "video:ingest": "tsx src/video-ingestion.ts",
+    "course:video": "tsx src/course-video-service.ts"
   },
   "keywords": [],
   "author": "",

@@ -17,7 +17,7 @@ function runBackgroundTranscoder(
   durationMs = 2000,
 ): void {
   console.log(
-    `⏳ [Background Worker] A iniciar transcodificação do Job ${jobId} para o Curso ${courseId}...`,
+    `[Background Worker] A iniciar transcodificação do Job ${jobId} para o Curso ${courseId}...`,
   );
 
   // setTimeout simula o processamento pesado fora do ciclo da requisição
@@ -70,4 +70,28 @@ export async function submitCourseVideo(
     jobId,
     sha256,
   };
+}
+
+// 4. Demonstração dos Cenários da Plataforma de Cursos
+async function runDemo() {
+  console.log("=== SIMULAÇÃO DA API: INGESTÃO DE VÍDEOS DE CURSOS ===\n");
+
+  // Cenário 1: Upload de Vídeo Legítimo (MP4 real)
+  console.log("--- TESTE 1: Submissão de Vídeo Válido pelo Produtor 1 ---");
+  const resValido = await submitCourseVideo(1, 101, "valid-video.mp4");
+  console.log("📡 Resposta Devolvida ao Cliente (HTTP Status):", resValido.statusCode);
+  console.log("📦 Payload da Resposta:", resValido);
+
+  console.log("\n--------------------------------------------------------------\n");
+
+  // Cenário 2: Upload de Ficheiro Falso (Texto mascarado de .mp4)
+  console.log("--- TESTE 2: Submissão de Ficheiro Inválido pelo Produtor 2 ---");
+  const resFalso = await submitCourseVideo(2, 102, "fake-video.mp4");
+  console.log("📡 Resposta Devolvida ao Cliente (HTTP Status):", resFalso.statusCode);
+  console.log("📦 Payload da Resposta:", resFalso);
+}
+
+const isMain = process.argv[1]?.endsWith("course-video-service.ts");
+if (isMain) {
+  runDemo().catch((err) => console.error("Erro na simulação:", err));
 }
