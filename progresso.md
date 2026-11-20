@@ -7,10 +7,10 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 ## 1. Visão Geral do Progresso
 
 - **Estado Actual:** 🔄 Semana 02 em Curso (Fase 1: Fundamentos) — JavaScript Assíncrono no Backend
-- **Horas Acumuladas:** 15.0 / 108 horas previstas (15h00 concluídas: 9h00 Semana 01 + 6h00 Semana 02)
+- **Horas Acumuladas:** 16.5 / 108 horas previstas (16h30 concluídas: 9h00 Semana 01 + 7h30 Semana 02)
 - **Semanas Concluídas:** 1 / 12 semanas
 - **Exercícios e Módulos Concluídos:** 6 exercícios formais + `safeAsync` + Pipeline de Ingestão de Vídeo (`video-ingestion.ts`)
-- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (em preparação da fundação)
+- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (ADR-001 e Registo 1 de Ingestão e Segurança concluídos)
 
 ---
 
@@ -19,7 +19,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 | Semana | Tema Principal                           | Horas Dedicadas |    Estado    |                                                             Avaliação / Nota                                                             | Data de Conclusão |
 | :----: | :--------------------------------------- | :-------------: | :----------: | :--------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
 | **01** | Node.js, V8, libuv e Ambiente TypeScript |     9 / 9h      | ✅ Concluído | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana | Data 2026-11-14   |
-| **02** | JavaScript Assíncrono, Event Loop e Streams | 6h / 9h | 🔄 Em Curso | Exercícios 2.1 a 2.3, `safeAsync` e ingestão de vídeo (Magic Bytes + SHA-256 via Stream) concluídos com sucesso. | - |
+| **02** | JavaScript Assíncrono, Event Loop e Streams | 7h30 / 9h | 🔄 Em Curso | Exercícios 2.1 a 2.3, `safeAsync`, ingestão de vídeo e ADR-001 de Ingestão de Vídeo e Fila BullMQ/Redis formalizados. | - |
 
 | **03** | Protocolo HTTP, REST e Express.js | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **04** | Arquitectura Controller-Service-Repository & SOLID | 0 / 9h | ⏳ Por Iniciar | - | - |
@@ -50,11 +50,12 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 
 ---
 
-## 4. Funcionalidades Entregues no `hospital_api`
+## 4. Funcionalidades Entregues na Plataforma de Vídeo-Aulas
 
-| Data | Funcionalidade / Módulo | Conceito Aplicado | Estado | Impacto Técnico |
-| :--: | :---------------------- | :---------------- | :----: | :-------------- |
-|  -   | -                       | -                 |   -    | -               |
+|    Data    | Funcionalidade / Módulo                           | Conceito Aplicado                                   |    Estado    | Impacto Técnico                                                                                |
+| :--------: | :------------------------------------------------ | :-------------------------------------------------- | :----------: | :--------------------------------------------------------------------------------------------- |
+| 2026-11-20 | Ingestão e Validação Criptográfica de Vídeos      | Magic Bytes com Buffer, SHA-256 via Stream e `safeAsync` | ✅ Concluído | Bloqueia ficheiros maliciosos e calcula integridade mantendo RAM fixa (< 15 MB).               |
+| 2026-11-20 | ADR-001: Processamento Assíncrono com BullMQ/Redis| Arquitectura de desacoplamento com `HTTP 202 Accepted` | ✅ Aprovado  | Elimina risco de timeout HTTP e separa transcodificação de vídeos da API síncrona do Express. |
 
 ---
 

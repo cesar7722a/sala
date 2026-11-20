@@ -33,21 +33,31 @@ Regista aqui cada funcionalidade ou correcção implementada na base de código 
 
 ---
 
-## Registo 1: [Nome da Primeira Funcionalidade]
-- **Data de Conclusão:**
-- **Semana do Roadmap:**
+## Registo 1: Módulo de Ingestão e Validação Criptográfica de Vídeos
+- **Data de Conclusão:** 2026-11-20
+- **Semana do Roadmap:** Semana 02 (JavaScript Assíncrono no Backend, Streams e Buffers)
 - **Problema que Pretende Resolver:**
+  Impedir o upload de ficheiros maliciosos disfarçados com extensão `.mp4` e garantir a integridade dos ficheiros de vídeo sem sobrecarregar a memória RAM do servidor com arquivos de centenas de megabytes.
 - **Conceitos Técnicos Utilizados:**
+  - Inspecção de cabeçalho binário (*Magic Bytes*) com `Buffer` e `fs/promises.open`.
+  - Cálculo de hash SHA-256 em streaming contínuo com `node:crypto.createHash` e `node:stream/promises.pipeline`.
+  - Tratamento defensivo de erros com padrão Result (`safeAsync`).
 - **Ficheiros/Módulos Envolvidos:**
+  - `src/video-ingestion.ts`
+  - `src/safe-async.ts`
 - **Implementação Realizada:**
+  Implementou-se a função `isMP4Video` que lê estritamente os primeiros 8 bytes à procura da assinatura `ftyp`, a função `calculateSHA256` que extrai o checksum sem carregar o ficheiro inteiro para a memória, e o orquestrador `processVideoUpload` que articula a validação com resposta segura.
 - **Testes Executados:**
+  - Teste com ficheiro malicioso disfarçado (`fake-video.mp4`): rejeitado imediatamente nos primeiros 8 bytes.
+  - Teste com vídeo MP4 simulado (`valid-video.mp4`): aprovado e com checksum hexadecimal gerado em milissegundos.
 - **Resultado Obtido:**
-- **Dificuldades Encontradas:**
+  Processamento com pegada de memória fixa (< 15 MB) e proteção robusta da infraestrutura de armazenamento.
 - **O que Aprendi:**
+  Extensões de ficheiros nunca devem ser confiadas no Backend; o cabeçalho binário real é a única garantia de tipo MIME legítimo.
 
 ---
 
-## Registo 2: [Nome da Segunda Funcionalidade]
+## Registo 2: [Nome da Segunda Funcionalidade — Ex.: Roteamento de Catálogo e Aulas em Express]
 - **Data de Conclusão:**
 - **Semana do Roadmap:**
 - **Problema que Pretende Resolver:**
