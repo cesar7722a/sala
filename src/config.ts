@@ -7,6 +7,13 @@ export interface AppConfig {
 }
 
 export function loadConfig(): AppConfig {
+  // Carrega o ficheiro .env nativamente no Node.js v20+ se existir
+  try {
+    process.loadEnvFile();
+  } catch {
+    // Se o ficheiro .env não existir fisicamente, continua usando variáveis do sistema
+  }
+
   const databaseUrl = process.env.DATABASE_URL;
 
   if (!databaseUrl) {
@@ -34,6 +41,9 @@ export function loadConfig(): AppConfig {
   };
 }
 
-const config = loadConfig();
-console.log("Configuração carregada com sucesso:");
-console.table(config);
+const isMain = process.argv[1]?.endsWith("config.ts");
+if (isMain) {
+  const config = loadConfig();
+  console.log("Configuração carregada com sucesso:");
+  console.table(config);
+}

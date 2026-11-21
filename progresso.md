@@ -6,10 +6,10 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 ## 1. Visão Geral do Progresso
 
-- **Estado Actual:** 🔄 Semana 02 em Curso (Fase 1: Fundamentos) — JavaScript Assíncrono no Backend
+- **Estado Actual:** ✅ Fase 1: Fundamentos de Node.js Concluída (Semanas 01 e 02) — Pronto para a Fase 2: APIs e Arquitectura
 - **Horas Acumuladas:** 18.0 / 108 horas previstas (18h00 concluídas: 9h00 Semana 01 + 9h00 Semana 02)
-- **Semanas Concluídas:** 1 / 12 semanas (Semana 02 a 100% dos blocos práticos, aguardando consolidação de sábado)
-- **Exercícios e Módulos Concluídos:** 6 exercícios formais + `safeAsync` + Pipeline de Ingestão de Vídeo + Serviço Desacoplado HTTP 202 (`course-video-service.ts`)
+- **Semanas Concluídas:** 2 / 12 semanas (Fase 1 100% concluída)
+- **Exercícios e Módulos Concluídos:** 6 exercícios formais + `safeAsync` + Pipeline de Ingestão de Vídeo + Serviço Desacoplado HTTP 202 + Bootstrap Integrador (`src/index.ts`)
 - **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (ADR-001, Ingestão por Streams e Desacoplamento Assíncrono concluídos)
 
 ---
@@ -19,7 +19,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 | Semana | Tema Principal                           | Horas Dedicadas |    Estado    |                                                             Avaliação / Nota                                                             | Data de Conclusão |
 | :----: | :--------------------------------------- | :-------------: | :----------: | :--------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
 | **01** | Node.js, V8, libuv e Ambiente TypeScript |     9 / 9h      | ✅ Concluído | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana | Data 2026-11-14   |
-| **02** | JavaScript Assíncrono, Event Loop e Streams | 9 / 9h | 🔄 Em Curso | Exercícios 2.1 a 2.3, `safeAsync`, ADR-001 e serviço desacoplado com resposta imediata HTTP 202 concluídos. | - |
+| **02** | JavaScript Assíncrono, Event Loop e Streams | 9 / 9h | ✅ Concluído | Exercícios 2.1 a 2.3, `safeAsync`, ADR-001, Ingestão de Vídeo e Bootstrap Integrador concluídos com distinção. | Data 2026-11-21   |
 
 | **03** | Protocolo HTTP, REST e Express.js | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **04** | Arquitectura Controller-Service-Repository & SOLID | 0 / 9h | ⏳ Por Iniciar | - | - |
@@ -70,6 +70,7 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 
 ## 6. Próximo Objectivo Imediato
 
-- [x] **Concluir a Semana 01 (sessão de sábado):** executar o Desafio Individual (`hospital_api`) — criar a fundação do repositório `hospital_api` (ESM, `tsconfig` estrito, scripts `dev/build/start`, `.env.example`, `.gitignore`, README com decisões técnicas). Ao concluir, atualizar horas para 9.0/9h, estado para ✅ e Data de Conclusão para 2026-11-14.
-- [x] Corrigir o `catch (error: any)` → `unknown` + type guard no Exercício 1.3.
-- [ ] Iniciar a Semana 02: Event Loop na prática, Promises/async-await, Streams e Buffer — primeira fatia do `hospital_api`: importador CSV de doentes em streaming.
+- [x] **Concluir a Semana 01:** V8, libuv, CommonJS vs ESM, Fail-Fast, pipeline de build e scripts corporativos.
+- [x] **Concluir a Semana 02:** Event Loop, Promises, `Promise.allSettled`, Streams, Buffers, Magic Bytes e ADR-001.
+- [x] **Concluir a Fase 1 (Fundamentos de Node.js):** 18h00 / 108h cumpridas com 100% de aproveitamento.
+- [ ] **Iniciar a Fase 2 (Semana 03 — Segunda-feira):** Protocolo HTTP, REST e Express.js — Arquitectura cliente-servidor, métodos HTTP, status codes, routing, middlewares e primeiros endpoints REST da plataforma de vídeo-aulas.
