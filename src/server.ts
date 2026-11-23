@@ -89,10 +89,19 @@ app.delete("/courses/:id", (req: Request, res: Response) => {
 
 // tarefas
 
+// tarefa 1
 app.get("/api/v1/info", (_req: Request, res: Response) => {
   res
     .status(200)
     .json({ name: "Video Platform API", version: "1.0.0", author: "Teu Nome" });
+});
+
+// tarefa 2
+
+app.get("/ping", (_req: Request, res: Response) => {
+  res
+    .status(200)
+    .json({ message: "pong", serverTime: new Date().toISOString() });
 });
 
 // 4. Arranque do Servidor
