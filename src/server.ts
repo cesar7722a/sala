@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import process from "node:process";
 
 // 1. Tipagem da Entidade de Curso
 export interface Course {
@@ -23,17 +24,17 @@ export const app = express();
 
 app.use(express.json());
 
-app.get("/hearth", (_req: Request, res: Response) => {
+app.get("/health", (_req: Request, res: Response) => {
   res
     .status(200)
-    .json({ status: "Hearth", timetamp: new Date().toISOString() });
+    .json({ status: "healthy", timestamp: new Date().toISOString() });
 });
 
 app.get("/courses", (_req: Request, res: Response) => {
   res.status(200).json(courses);
 });
 
-app.get("/courses:id", (req: Request, res: Response) => {
+app.get("/courses/:id", (req: Request, res: Response) => {
   const { id } = req.params;
 
   const course = courses.find((e) => e.id === id);
@@ -47,7 +48,7 @@ app.get("/courses:id", (req: Request, res: Response) => {
   return res.status(200).json(course);
 });
 
-app.post("/course", (req: Request, res: Response) => {
+app.post("/courses", (req: Request, res: Response) => {
   const { title, price, instructorId } = req.body;
 
   // Validação Fail-Fast de entrada

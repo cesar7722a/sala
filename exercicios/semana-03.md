@@ -22,15 +22,97 @@ Praticar roteamento com `express.Router()`, manipulação de status codes e tipa
 4. Retornar status 404 com mensagem descritiva caso o ID pesquisado não exista.
 
 ### Critérios de Avaliação
-- [ ] Retorna status 201 Created na criação com a entidade gerada.
-- [ ] Retorna status 204 No Content na eliminação.
-- [ ] Parâmetros e retornos devidamente tipados em TypeScript.
+- [x] Retorna status 201 Created na criação com a entidade gerada.
+- [x] Retorna status 204 No Content na eliminação.
+- [x] Parâmetros e retornos devidamente tipados em TypeScript.
 
 ### Espaço para Solução e Observações
 ```typescript
-// Cola a tua solução aqui
+import express, { Request, Response } from "express";
+import process from "node:process";
+
+export interface Course {
+  id: string;
+  title: string;
+  price: number;
+  instructorId: number;
+  createdAt: Date;
+}
+
+const courses: Course[] = [
+  {
+    id: "1",
+    title: "Fundamentos de Node.js e TypeScript",
+    price: 15000,
+    instructorId: 101,
+    createdAt: new Date(),
+  },
+];
+
+export const app = express();
+app.use(express.json());
+
+// GET /health
+app.get("/health", (_req: Request, res: Response) => {
+  res.status(200).json({ status: "healthy", timestamp: new Date().toISOString() });
+});
+
+// GET /courses
+app.get("/courses", (_req: Request, res: Response) => {
+  res.status(200).json(courses);
+});
+
+// GET /courses/:id
+app.get("/courses/:id", (req: Request, res: Response) => {
+  const { id } = req.params;
+  const course = courses.find((e) => e.id === id);
+
+  if (!course) {
+    return res.status(404).json({ error: `Curso com ID '${id}' não encontrado!` });
+  }
+
+  return res.status(200).json(course);
+});
+
+// POST /courses
+app.post("/courses", (req: Request, res: Response) => {
+  const { title, price, instructorId } = req.body;
+
+  if (!title || typeof price !== "number" || !instructorId) {
+    return res.status(400).json({
+      error: "Campos obrigatórios inválidos: 'title', 'price' e 'instructorId' são necessários.",
+    });
+  }
+
+  const newCourse: Course = {
+    id: String(Date.now()),
+    title,
+    price,
+    instructorId,
+    createdAt: new Date(),
+  };
+
+  courses.push(newCourse);
+  return res.status(201).json(newCourse);
+});
+
+// DELETE /courses/:id
+app.delete("/courses/:id", (req: Request, res: Response) => {
+  const { id } = req.params;
+  const index = courses.findIndex((c) => c.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({ error: `Curso com ID '${id}' não encontrado!` });
+  }
+
+  courses.splice(index, 1);
+  return res.status(204).send();
+});
 ```
 **Observações e Aprendizados:**
+1. **Middleware `express.json()`:** Sem este middleware registado antes das rotas, qualquer requisição POST com corpo JSON resulta em `req.body === undefined`.
+2. **Status Codes Semânticos:** Uso rigoroso de `201 Created` para novas criações e `204 No Content` com `.send()` vazio para deleções bem-sucedidas.
+3. **Parâmetros de Rota (`:id`):** A barra `/` antes de `:id` é mandatória para delimitar o segmento da URL.
 
 ---
 

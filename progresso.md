@@ -6,11 +6,11 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 ## 1. Visão Geral do Progresso
 
-- **Estado Actual:** ✅ Fase 1: Fundamentos de Node.js Concluída (Semanas 01 e 02) — Pronto para a Fase 2: APIs e Arquitectura
-- **Horas Acumuladas:** 18.0 / 108 horas previstas (18h00 concluídas: 9h00 Semana 01 + 9h00 Semana 02)
+- **Estado Actual:** 🔄 Semana 03 em Curso (Fase 2: APIs e Arquitectura) — Protocolo HTTP, REST e Express.js
+- **Horas Acumuladas:** 19.5 / 108 horas previstas (19h30 concluídas: 18h00 Fase 1 + 1h30 Semana 03)
 - **Semanas Concluídas:** 2 / 12 semanas (Fase 1 100% concluída)
-- **Exercícios e Módulos Concluídos:** 6 exercícios formais + `safeAsync` + Pipeline de Ingestão de Vídeo + Serviço Desacoplado HTTP 202 + Bootstrap Integrador (`src/index.ts`)
-- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (ADR-001, Ingestão por Streams e Desacoplamento Assíncrono concluídos)
+- **Exercícios Concluídos:** 7 (Exercícios 1.1 a 3.1 concluídos)
+- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (ADR-001 e Primeiro Servidor Express com Catálogo de Cursos)
 
 ---
 
@@ -20,8 +20,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 | :----: | :--------------------------------------- | :-------------: | :----------: | :--------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
 | **01** | Node.js, V8, libuv e Ambiente TypeScript |     9 / 9h      | ✅ Concluído | Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana | Data 2026-11-14   |
 | **02** | JavaScript Assíncrono, Event Loop e Streams | 9 / 9h | ✅ Concluído | Exercícios 2.1 a 2.3, `safeAsync`, ADR-001, Ingestão de Vídeo e Bootstrap Integrador concluídos com distinção. | Data 2026-11-21   |
-
-| **03** | Protocolo HTTP, REST e Express.js | 0 / 9h | ⏳ Por Iniciar | - | - |
+| **03** | Protocolo HTTP, REST e Express.js | 1h30 / 9h | 🔄 Em Curso | Exercício 3.1 concluído. Servidor Express configurado com TypeScript, `express.json()`, roteamento REST e status codes semânticos. | - |
 | **04** | Arquitectura Controller-Service-Repository & SOLID | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **05** | PostgreSQL, Modelação e Prisma ORM | 0 / 9h | ⏳ Por Iniciar | - | - |
 | **06** | Validação com Zod e Tratamento Global de Erros | 0 / 9h | ⏳ Por Iniciar | - | - |
@@ -47,6 +46,7 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 |        2026-11-16        | Semana 02 | Exercício 2.1: JavaScript Assíncrono              | ✅ Concluído | sequencia de executação `SetTimers, promises, async/await`                                     |
 |        2026-11-17        | Semana 02 | Exercício 2.2: Orquestrador com Tolerância        | ✅ Concluído | Concorrência paralela com `Promise.allSettled`, tipagem discriminada e tolerância a falhas.     |
 |        2026-11-17        | Semana 02 | Exercício 2.3: Processamento com Streams          | ✅ Concluído | Processamento contínuo de 50.000 linhas com `createReadStream`, `Transform` e `pipeline`. RAM: ~11MB. |
+|        2026-11-23        | Semana 03 | Exercício 3.1: CRUD Básico com Express e TS       | ✅ Concluído | Roteamento RESTful, `express.json()`, status 200, 201 Created, 204 No Content e 404 Not Found.        |
 
 ---
 
