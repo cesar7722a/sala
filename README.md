@@ -74,6 +74,7 @@ A base de conhecimento está organizada nas seguintes directorias:
 - [`stack-tecnologica.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/stack-tecnologica.md): Comparativo entre a stack didáctica e a stack real da empresa.
 - [`anotacoes/`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes): Apontamentos das 12 semanas e templates padronizados.
 - [`exercicios/`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/exercicios): Cadernos de exercícios práticos com critérios de avaliação.
+- [`tarefas/`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/tarefas): Baterias de 10 a 15 tarefas e exercícios diários para consolidação autónoma durante o dia.
 - [`projectos/`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/projectos): Especificações de três projectos práticos para consolidação de portfólio.
 - [`integracao-empresa/`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/integracao-empresa): Registo seguro de funcionalidades, melhorias e decisões técnicas aplicadas no estágio.
 - [`referencias/`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/referencias): Glossário de termos e guia de boas práticas de engenharia Backend.
