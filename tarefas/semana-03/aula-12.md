@@ -50,12 +50,16 @@ app.get("/api/v1/info", (_req: Request, res: Response) => {
 - **Objectivo:** Manipulação de datas no formato ISO e envio de respostas de saúde.
 - **Enunciado:** Cria a rota `GET /ping` que devolve `{ message: "pong", serverTime: new Date().toISOString() }`.
 - **Critérios de Avaliação:**
-  - [ ] Status code 200 OK.
-  - [ ] A data é dinâmica a cada chamada.
+  - [x] Status code 200 OK.
+  - [x] A data é dinâmica a cada chamada.
 - **O Teu Código / Solução:**
 
 ```typescript
-// Cola aqui o teu código
+app.get("/ping", (_req: Request, res: Response) => {
+  res
+    .status(200)
+    .json({ message: "pong", serverTime: new Date().toISOString() });
+});
 ```
 
 ---
@@ -66,11 +70,14 @@ app.get("/api/v1/info", (_req: Request, res: Response) => {
 - **Enunciado:** Cria uma rota `POST /test-created` que recebe qualquer corpo e devolve status `201 Created` juntamente com a mensagem `{ success: true, id: "item-123" }`.
 - **Dica de Arranque:** Utiliza `res.status(201).json(...)`.
 - **Critérios de Avaliação:**
-  - [ ] Responde obrigatoriamente com status 201 (e nunca 200).
+  - [x] Responde obrigatoriamente com status 201 (e nunca 200).
 - **O Teu Código / Solução:**
 
 ```typescript
-// Cola aqui o teu código
+app.post("/test-created", (req: Request, res: Response) => {
+  const { name, email, id } = req.body;
+  res.status(201).json({ success: true, id, email, name });
+});
 ```
 
 ---

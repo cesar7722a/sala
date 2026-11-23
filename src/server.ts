@@ -104,6 +104,13 @@ app.get("/ping", (_req: Request, res: Response) => {
     .json({ message: "pong", serverTime: new Date().toISOString() });
 });
 
+// tarefa 3
+
+app.post("/test-created", (req: Request, res: Response) => {
+  const { name, email, id } = req.body;
+  res.status(201).json({ success: true, id, email, name });
+});
+
 // 4. Arranque do Servidor
 const PORT = 3333;
 const isMain = process.argv[1]?.endsWith("server.ts");
