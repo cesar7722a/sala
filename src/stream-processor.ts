@@ -11,15 +11,20 @@ function getMemoryUsageMB(): string {
 }
 
 // 2. Função para criar um ficheiro CSV de teste com 50.000 linhas
-export async function generateSampleCSV(filePath: string, totalRows = 50_000): Promise<void> {
-  console.log(`📝 A gerar ficheiro de teste '${filePath}' com ${totalRows.toLocaleString()} linhas...`);
-  
+export async function generateSampleCSV(
+  filePath: string,
+  totalRows = 50_000,
+): Promise<void> {
+  console.log(
+    `📝 A gerar ficheiro de teste '${filePath}' com ${totalRows.toLocaleString()} linhas...`,
+  );
+
   const writeStream = createWriteStream(filePath);
   writeStream.write("id,nome_aluno,curso,preco\n");
 
   for (let i = 1; i <= totalRows; i++) {
     const row = `${i},Aluno_${i},Curso_NodeJS_Backend,15000\n`;
-    
+
     // Se o buffer interno encher, o writeStream.write devolve 'false'
     // Isso avisa para esperar que o disco esvazie (controlo de backpressure)
     const canContinue = writeStream.write(row);
@@ -40,7 +45,7 @@ export function createUpperCaseTransform(): Transform {
       try {
         // Converte o pedaço (chunk) de Buffer binário para String
         const textChunk = chunk.toString("utf-8");
-        
+
         // Aplica a transformação: converte todo o texto do chunk para maiúsculas
         const upperChunk = textChunk.toUpperCase();
 
@@ -55,17 +60,20 @@ export function createUpperCaseTransform(): Transform {
 }
 
 // 4. Função principal que liga o pipeline completo
-export async function processCSVWithStreams(inputFile: string, outputFile: string): Promise<void> {
+export async function processCSVWithStreams(
+  inputFile: string,
+  outputFile: string,
+): Promise<void> {
   console.log("🚀 A iniciar processamento com Streams...");
   console.log(`📊 Memória RAM inicial: ${getMemoryUsageMB()}`);
-  
+
   const startTime = Date.now();
 
   // O PIPELINE liga Leitura -> Transformação -> Escrita de forma segura
   await pipeline(
     createReadStream(inputFile, { highWaterMark: 64 * 1024 }), // 1. Lê em fatias de 64 KB
-    createUpperCaseTransform(),                                // 2. Transforma cada fatia
-    createWriteStream(outputFile)                              // 3. Grava no disco
+    createUpperCaseTransform(), // 2. Transforma cada fatia
+    createWriteStream(outputFile), // 3. Grava no disco
   );
 
   const duration = Date.now() - startTime;

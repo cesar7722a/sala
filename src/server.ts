@@ -87,6 +87,14 @@ app.delete("/courses/:id", (req: Request, res: Response) => {
   return res.status(204).send();
 });
 
+// tarefas
+
+app.get("/api/v1/info", (_req: Request, res: Response) => {
+  res
+    .status(200)
+    .json({ name: "Video Platform API", version: "1.0.0", author: "Teu Nome" });
+});
+
 // 4. Arranque do Servidor
 const PORT = 3333;
 const isMain = process.argv[1]?.endsWith("server.ts");
