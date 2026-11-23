@@ -111,6 +111,12 @@ app.post("/test-created", (req: Request, res: Response) => {
   res.status(201).json({ success: true, id, email, name });
 });
 
+// tarefa 4
+
+app.delete("/clear-session", (_req: Request, res: Response) => {
+  res.status(204).send();
+});
+
 // 4. Arranque do Servidor
 const PORT = 3333;
 const isMain = process.argv[1]?.endsWith("server.ts");

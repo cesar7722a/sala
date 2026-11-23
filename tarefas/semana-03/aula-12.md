@@ -88,12 +88,14 @@ app.post("/test-created", (req: Request, res: Response) => {
 - **Enunciado:** Cria uma rota `DELETE /clear-session` que não retorna nenhum JSON, respondendo apenas com status `204` e finalizando a requisição com `.send()`.
 - **Dica de Arranque:** Lembra-te de que `res.status(204).send()` não envia dados no corpo.
 - **Critérios de Avaliação:**
-  - [ ] Status 204 verificado.
-  - [ ] Nenhum conteúdo no corpo da resposta.
+  - [x] Status 204 verificado.
+  - [x] Nenhum conteúdo no corpo da resposta.
 - **O Teu Código / Solução:**
 
 ```typescript
-// Cola aqui o teu código
+app.delete("/clear-session", (_req: Request, res: Response) => {
+  res.status(204).send();
+});
 ```
 
 ---
