@@ -1,5 +1,6 @@
 import express, { Request, Response } from "express";
 import process from "node:process";
+import { requestLoggerAndTimer } from "./middlewares/logger.js";
 
 // 1. Tipagem da Entidade de Curso
 export interface Course {
@@ -23,6 +24,8 @@ const courses: Course[] = [
 export const app = express();
 
 app.use(express.json());
+
+app.use(requestLoggerAndTimer);
 
 app.get("/health", (_req: Request, res: Response) => {
   res
