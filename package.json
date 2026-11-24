@@ -16,7 +16,8 @@
     "safe-async": "tsx src/safe-async.ts",
     "video:ingest": "tsx src/video-ingestion.ts",
     "course:video": "tsx src/course-video-service.ts",
-    "server": "tsx watch src/server.ts"
+    "server": "tsx watch src/server.ts",
+    "tarefa": "tsx watch resolucao-tarefas/semana-03/tarefa-aula-12.ts"
   },
   "keywords": [],
   "author": "",

@@ -30,3 +30,7 @@ app.post("/test-created", (req: Request, res: Response) => {
 app.delete("/clear-session", (_req: Request, res: Response) => {
   res.status(204).send();
 });
+
+app.listen(4000, () => {
+  console.log("Servidor a rudar na porta 4000");
+});
