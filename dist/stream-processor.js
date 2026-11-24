@@ -52,8 +52,7 @@ export async function processCSVWithStreams(inputFile, outputFile) {
     // O PIPELINE liga Leitura -> Transformação -> Escrita de forma segura
     await pipeline(createReadStream(inputFile, { highWaterMark: 64 * 1024 }), // 1. Lê em fatias de 64 KB
     createUpperCaseTransform(), // 2. Transforma cada fatia
-    createWriteStream(outputFile) // 3. Grava no disco
-    );
+    createWriteStream(outputFile));
     const duration = Date.now() - startTime;
     console.log(`✅ Processamento concluído em ${duration}ms!`);
     console.log(`📊 Memória RAM final: ${getMemoryUsageMB()}`);

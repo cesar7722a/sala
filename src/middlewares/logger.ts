@@ -11,19 +11,19 @@ export function requestLoggerAndTimer(
 
   // 2. Intercepta o método 'res.send' para conseguir injetar o cabeçalho X-Response-Time
   // antes de os bytes serem enviados para a rede
-  const originaSend = res.send;
+  const originalSend = res.send;
   res.send = function (body) {
     const end = process.hrtime.bigint();
-    const duratioMs = (Number(start - end) / 1_000_000).toFixed(2);
+    const durationMs = (Number(end - start) / 1_000_000).toFixed(2);
 
-    res.setHeader("X-Response-Time", `${duratioMs}ms`);
-    return originaSend.call(this, body);
+    res.setHeader("X-Response-Time", `${durationMs}ms`);
+    return originalSend.call(this, body);
   };
 
   // 3. Ouve o evento 'finish' para imprimir o log limpo na consola quando a resposta terminar
   res.on("finish", () => {
     const end = process.hrtime.bigint();
-    const durationMs = (Number(start - end) / 1_000_000).toFixed(2);
+    const durationMs = (Number(end - start) / 1_000_000).toFixed(2);
 
     // Emojis semânticos dependendo do Status Code
     const statusEmoji = res.statusCode >= 400 ? "❌" : "✅";

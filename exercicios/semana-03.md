@@ -135,14 +135,48 @@ Compreender a cadeia de middlewares do Express, ciclo de vida do evento `res.on(
 3. Injectar o cabeçalho `X-Response-Time: XXms`.
 
 ### Critérios de Avaliação
-- [ ] Invoca sempre `next()` para não bloquear o fluxo da requisição.
-- [ ] Medição de tempo precisa mesmo em rotas assíncronas lentas.
-- [ ] Cabeçalho presente nas respostas inspecionadas no Postman/curl.
+- [x] Invoca sempre `next()` para não bloquear o fluxo da requisição.
+- [x] Medição de tempo precisa mesmo em rotas assíncronas lentas.
+- [x] Cabeçalho presente nas respostas inspecionadas no Postman/curl.
 
 ### Espaço para Solução e Observações
 ```typescript
-// Cola a tua solução aqui
+import { Request, Response, NextFunction } from "express";
+import process from "node:process";
+
+export function requestLoggerAndTimer(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): void {
+  const start = process.hrtime.bigint();
+
+  const originalSend = res.send;
+  res.send = function (body) {
+    const end = process.hrtime.bigint();
+    const durationMs = (Number(end - start) / 1_000_000).toFixed(2);
+
+    res.setHeader("X-Response-Time", `${durationMs}ms`);
+    return originalSend.call(this, body);
+  };
+
+  res.on("finish", () => {
+    const end = process.hrtime.bigint();
+    const durationMs = (Number(end - start) / 1_000_000).toFixed(2);
+
+    const statusEmoji = res.statusCode >= 400 ? "❌" : "✅";
+    console.log(
+      `${statusEmoji} [${req.method}] ${req.originalUrl} -> Status ${res.statusCode} (Duração: ${durationMs}ms)`
+    );
+  });
+
+  next();
+}
 ```
+**Observações e Aprendizados:**
+1. **Invocação Mandatória de `next()`:** Se `next()` não for invocado, a esteira de execução é interrompida e a requisição congela indefinidamente.
+2. **Precisão de Nanossegundos (`process.hrtime.bigint`):** Utilizar `bigint` permite obter a diferença real sem perda de precisão em operações de frações de milissegundo.
+3. **Injeção de Cabeçalho antes do Envio:** Modificar o método `res.send` intercepta a saída e define `res.setHeader("X-Response-Time", ...)` antes de o Express começar a despejar os bytes na rede.
 **Observações e Aprendizados:**
 
 ---

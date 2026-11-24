@@ -1,5 +1,6 @@
 import express from "express";
 import process from "node:process";
+import { requestLoggerAndTimer } from "./middlewares/logger.js";
 // 2. Base de Dados em memória (Array tipado para testes iniciais)
 const courses = [
     {
@@ -12,6 +13,7 @@ const courses = [
 ];
 export const app = express();
 app.use(express.json());
+app.use(requestLoggerAndTimer);
 app.get("/health", (_req, res) => {
     res
         .status(200)
@@ -61,6 +63,28 @@ app.delete("/courses/:id", (req, res) => {
     courses.splice(index, 1);
     // Status 204 No Content: Sucesso absoluto, sem corpo de resposta
     return res.status(204).send();
+});
+// tarefas
+// tarefa 1
+app.get("/api/v1/info", (_req, res) => {
+    res
+        .status(200)
+        .json({ name: "Video Platform API", version: "1.0.0", author: "Teu Nome" });
+});
+// tarefa 2
+app.get("/ping", (_req, res) => {
+    res
+        .status(200)
+        .json({ message: "pong", serverTime: new Date().toISOString() });
+});
+// tarefa 3
+app.post("/test-created", (req, res) => {
+    const { name, email, id } = req.body;
+    res.status(201).json({ success: true, id, email, name });
+});
+// tarefa 4
+app.delete("/clear-session", (_req, res) => {
+    res.status(204).send();
 });
 // 4. Arranque do Servidor
 const PORT = 3333;
