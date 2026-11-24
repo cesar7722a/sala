@@ -90,7 +90,7 @@ app.delete("/courses/:id", (req: Request, res: Response) => {
   return res.status(204).send();
 });
 
-// tarefas
+// tarefas aula 12
 
 // tarefa 1
 app.get("/api/v1/info", (_req: Request, res: Response) => {
@@ -119,6 +119,8 @@ app.post("/test-created", (req: Request, res: Response) => {
 app.delete("/clear-session", (_req: Request, res: Response) => {
   res.status(204).send();
 });
+
+// tarefa aula 13
 
 // 4. Arranque do Servidor
 const PORT = 3333;
