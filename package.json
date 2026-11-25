@@ -17,7 +17,7 @@
     "video:ingest": "tsx src/video-ingestion.ts",
     "course:video": "tsx src/course-video-service.ts",
     "server": "tsx watch src/server.ts",
-    "tarefa": "tsx watch resolucao-tarefas/semana-03/tarefa-aula-13.ts"
+    "tarefa": "tsx watch resolucao-tarefas/semana-03/tarefa-aula-14.ts"
   },
   "keywords": [],
   "author": "",
