@@ -11,3 +11,9 @@ export function TestMiddleware(
 
   next();
 }
+
+export function requestTime(req: Request, res: Response, next: NextFunction) {
+  (req as any).requestTime = new Date();
+
+  next();
+}

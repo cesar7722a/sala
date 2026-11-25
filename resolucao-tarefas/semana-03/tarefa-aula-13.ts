@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import { requestTime } from "./middlewares/logger";
 
 const app = express();
 app.use(express.json());
@@ -46,8 +47,19 @@ app.use((_req, res, next) => {
   next();
 });
 
+app.use(requestTime);
+
 app.get("/users", (_req: Request, res: Response) => {
   res.status(200).json({ user: "users" });
+});
+
+app.get("/ping", (req: Request, res: Response) => {
+  const time = (req as any).requestTime;
+
+  res.json({
+    message: "Pong!",
+    requestTime: time,
+  });
 });
 
 const port = 7000;
