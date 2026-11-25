@@ -206,12 +206,71 @@ Lidar de forma segura com `req.query`, conversão de tipos de dados de strings p
    ```
 
 ### Critérios de Avaliação
-- [ ] Se o utilizador passar `limit=500`, a API limita automaticamente para 50.
-- [ ] Se passar `page` inválida (ex.: texto ou número negativo), assume valor defensivo ou retorna 400.
-- [ ] Filtro textual insensível a maiúsculas/minúsculas (*case-insensitive*).
+- [x] Se o utilizador passar `limit=500`, a API limita automaticamente para 50.
+- [x] Se passar `page` inválida (ex.: texto ou número negativo), assume valor defensivo ou retorna 400.
+- [x] Filtro textual insensível a maiúsculas/minúsculas (*case-insensitive*).
 
 ### Espaço para Solução e Observações
 ```typescript
-// Cola a tua solução aqui
+app.get("/courses", (req: Request, res: Response) => {
+  // 1. Extração e sanitização dos parâmetros de consulta (req.query)
+  const search =
+    typeof req.query.search === "string" ? req.query.search.toLowerCase() : "";
+  const minPrice = req.query.minPrice ? Number(req.query.minPrice) : undefined;
+  const maxPrice = req.query.maxPrice ? Number(req.query.maxPrice) : undefined;
+
+  // Validação Fail-Fast: se minPrice > maxPrice, lança erro para o middleware global
+  if (minPrice !== undefined && maxPrice !== undefined && minPrice > maxPrice) {
+    throw new Error("O preço mínimo não pode ser superior ao preço máximo!");
+  }
+
+  // 2. Paginação defensiva (padrão: página 1, limite 5; limite máximo de segurança: 20)
+  const page = Math.max(1, Number(req.query.page) || 1);
+  const limit = Math.min(20, Math.max(1, Number(req.query.limit) || 5));
+
+  // 3. Aplicação dos filtros dinâmicos
+  let filteredCourses = courses;
+
+  if (search) {
+    filteredCourses = filteredCourses.filter((c) =>
+      c.title.toLowerCase().includes(search)
+    );
+  }
+
+  if (minPrice !== undefined) {
+    filteredCourses = filteredCourses.filter((c) => c.price >= minPrice);
+  }
+
+  if (maxPrice !== undefined) {
+    filteredCourses = filteredCourses.filter((c) => c.price <= maxPrice);
+  }
+
+  // 4. Corte de paginação com slice
+  const startIndex = (page - 1) * limit;
+  const paginatedData = filteredCourses.slice(startIndex, startIndex + limit);
+
+  // 5. Resposta padronizada com metadados para o Frontend (React/Next.js)
+  return res.status(200).json({
+    page,
+    limit,
+    totalItems: filteredCourses.length,
+    totalPages: Math.ceil(filteredCourses.length / limit),
+    data: paginatedData,
+  });
+});
+
+// Middleware Global de Tratamento de Erros (4 argumentos)
+app.use((err: Error, _req: Request, res: Response, _next: express.NextFunction) => {
+  console.error("💥 [Erro Global Capturado]:", err.message);
+
+  return res.status(400).json({
+    error: "Erro na requisição",
+    details: err.message,
+    timestamp: new Date().toISOString(),
+  });
+});
 ```
 **Observações e Aprendizados:**
+1. **Cast de Tipos em `req.query`:** Todos os valores chegam como strings. O cast defensivo `Number(req.query.page) || 1` associado ao `Math.max(1, ...)` protege contra valores negativos, zero ou caracteres inválidos.
+2. **Prevenção de Abuso de Memória:** O uso de `Math.min(20, ...)` impede que o cliente solicite arrays gigantescos, mantendo o tempo de resposta da API previsível.
+3. **Tratamento Centralizado de Erros:** Disparar `throw new Error(...)` dentro da rota é capturado pelo middleware de 4 argumentos `(err, req, res, next)`, centralizando o formato da resposta de erro JSON e impedindo o crash do processo Node.js.
