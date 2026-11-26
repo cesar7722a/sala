@@ -146,8 +146,8 @@ app.get("/cursos", (req: Request, res: Response) => {
   res.status(200).json(data);
 });
 
+//tarefa 09
 app.get("/forcar-erro", () => {
-  console.log("a");
   throw new Error("Falha intencional de simulação!");
 });
 
