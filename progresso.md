@@ -7,10 +7,10 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 ## 1. Visão Geral do Progresso
 
 - **Estado Actual:** 🔄 Semana 03 em Curso (Fase 2: APIs e Arquitectura) — Protocolo HTTP, REST, Express.js e Organização Modular de Rotas
-- **Horas Acumuladas:** 24.0 / 108 horas previstas (24h00 concluídas: 18h00 Fase 1 + 6h00 Semana 03)
+- **Horas Acumuladas:** 25.5 / 108 horas previstas (25h30 concluídas: 18h00 Fase 1 + 7h30 Semana 03)
 - **Semanas Concluídas:** 2 / 12 semanas (Fase 1 100% concluída)
-- **Exercícios Concluídos:** 9 (Todos os 3 exercícios formais da Semana 03 concluídos: 3.1, 3.2 e 3.3; Aula 15 modularização finalizada)
-- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (Arquitectura modular com `express.Router()`, catálogo com filtros, paginação defensiva e tratamento global de erros)
+- **Exercícios Concluídos:** 9 formais + Tarefas 01 a 04 da Aula 15/16 resolvidas com arquitectura modular (Controllers e Routers separados)
+- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (Arquitectura modular com `express.Router()`, separação estrita de Controllers para Cursos, Aulas, Categorias, Estudantes e Instrutores, catálogo com filtros e tratamento de erros)
 
 **Conteúdos abordados na preparação da Aula 15:**
 
@@ -29,7 +29,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 | :----: | :------------------------------------------------- | :-------------: | :------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
 | **01** | Node.js, V8, libuv e Ambiente TypeScript           |     9 / 9h      |  ✅ Concluído  |                                                 Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana                                                  | Data 2026-11-14   |
 | **02** | JavaScript Assíncrono, Event Loop e Streams        |     9 / 9h      |  ✅ Concluído  |                                                              Exercícios 2.1 a 2.3, `safeAsync`, ADR-001, Ingestão de Vídeo e Bootstrap Integrador concluídos com distinção.                                                               | Data 2026-11-21   |
-| **03** | Protocolo HTTP, REST e Express.js                  |    6h00 / 9h    |  🔄 Em Curso   | Exercícios 3.1, 3.2 e 3.3 concluídos. Estudados filtros, paginação defensiva, middleware global de erros, organização modular com `express.Router()`, separação Routes/Controllers, integração de routers e ordem de middlewares e rotas. | -                 |
+| **03** | Protocolo HTTP, REST e Express.js                  |    7h30 / 9h    |  🔄 Em Curso   | Exercícios 3.1, 3.2 e 3.3 concluídos. Aulas 15 e 16 consolidadas: domínio prático de `express.Router()`, separação integral de Routes e Controllers (Cursos, Aulas, Categorias, Alunos, Instrutores) e montagem de múltiplos módulos. | -                 |
 | **04** | Arquitectura Controller-Service-Repository & SOLID |     0 / 9h      | ⏳ Por Iniciar |                                                                                                                     -                                                                                                                     | -                 |
 | **05** | PostgreSQL, Modelação e Prisma ORM                 |     0 / 9h      | ⏳ Por Iniciar |                                                                                                                     -                                                                                                                     | -                 |
 | **06** | Validação com Zod e Tratamento Global de Erros     |     0 / 9h      | ⏳ Por Iniciar |                                                                                                                     -                                                                                                                     | -                 |
