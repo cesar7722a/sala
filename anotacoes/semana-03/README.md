@@ -7,12 +7,13 @@
 - Compreender a fundo o funcionamento dos Middlewares no Express (ciclo `req`, `res`, `next`).
 - Tratar parâmetros de consulta (`req.query`), parâmetros de rota (`req.params`) e payloads (`req.body`).
 
-## 2. Conteúdos Previstos
-- [ ] Métodos HTTP e correspondência semântica com acções de CRUD.
-- [ ] Códigos de estado HTTP (200, 201, 204, 400, 401, 403, 404, 409, 422, 500).
-- [ ] Estruturação de rotas com `express.Router()`.
-- [ ] Criação de middlewares customizados (autenticação básica, logging de pedidos, CORS).
-- [ ] Tratamento básico de erros síncronos e assíncronos no Express.
+## 2. Conteúdos Previstos e Aulas
+- [x] **Aula 12:** [`aula-12-http-rest-e-primeiro-servidor-express.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes/semana-03/aula-12-http-rest-e-primeiro-servidor-express.md) — Protocolo HTTP, métodos, status codes e primeiro servidor Express com TS.
+- [x] **Aula 13:** [`aula-13-middlewares-e-performance.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes/semana-03/aula-13-middlewares-e-performance.md) — Middlewares, pipeline `req/res/next`, cabeçalhos customizados e medição com `process.hrtime.bigint()`.
+- [x] **Aula 14:** [`aula-14-filtros-paginacao-e-erros.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes/semana-03/aula-14-filtros-paginacao-e-erros.md) — Parâmetros de busca (`req.query`), paginação defensiva e middleware global de erros de 4 parâmetros.
+- [x] **Aula 15:** [`aula-15-express-router-e-modularizacao.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes/semana-03/aula-15-express-router-e-modularizacao.md) — Organização modular com `express.Router()`, divisão em rotas e controllers, e prefixos de URL.
+- [ ] **Aula 16:** Aplicação na Empresa: Refactorização da Plataforma de Cursos e Integração com Ingestão de Vídeo.
+- [ ] **Aula 17:** Desafio Integrador da Semana 03 e Revisão Consolidada.
 
 ## 3. Exercícios Práticos da Semana
 Consulta o caderno de exercícios em: [`../../exercicios/semana-03.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/exercicios/semana-03.md)

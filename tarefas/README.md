@@ -26,3 +26,4 @@ Esta directoria contém as **tarefas diárias de consolidação técnica** para 
   - [`semana-03/aula-12.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/tarefas/semana-03/aula-12.md): 15 Exercícios de Protocolo HTTP, Métodos, Status Codes e Servidor Express.
   - [`semana-03/aula-13.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/tarefas/semana-03/aula-13.md): 15 Exercícios de Middlewares, Intercepção de Fluxo, Cabeçalhos e Medição de Performance.
   - [`semana-03/aula-14.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/tarefas/semana-03/aula-14.md): 15 Exercícios de Filtros, Paginação Defensiva (req.query) e Tratamento Centralizado de Erros.
+  - [`semana-03/aula-15.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/tarefas/semana-03/aula-15.md): 15 Exercícios de Organização Modular com `express.Router()`, Separação em Controllers e Middlewares de Rota.

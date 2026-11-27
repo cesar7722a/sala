@@ -40,10 +40,14 @@ export default healthRouter;
 **A tua solução:**
 
 ```typescript
-// Escreve aqui a tua solução e observações
+app.use("/health", healthRoutes);
+
+healthRoutes.get("/", (_req: Request, res: Response) => {
+  res.status(200).json({ status: "online" });
+});
 ```
 
-- [ ] Concluído
+- [x] Concluído
 
 ---
 

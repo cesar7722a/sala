@@ -1,18 +1,21 @@
 import { Router } from "express";
-
 import {
   getCourses,
-  getCourseById,
   getFeaturedCourses,
+  getCourseById,
+  createCourse,
+  deleteCourse,
 } from "../controllers/courses.controller.js";
 
 const coursesRouter = Router();
 
-// Rota mais específica primeiro
+// 1. Rota mais específica primeiro (evita que /featured seja capturado por /:id)
 coursesRouter.get("/featured", getFeaturedCourses);
 
-// Rotas gerais
+// 2. Rotas gerais e por parâmetro
 coursesRouter.get("/", getCourses);
 coursesRouter.get("/:id", getCourseById);
+coursesRouter.post("/", createCourse);
+coursesRouter.delete("/:id", deleteCourse);
 
 export default coursesRouter;
