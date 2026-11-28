@@ -263,10 +263,22 @@ coursesRouter.use((req, res, next) => {
 **A tua solução:**
 
 ```typescript
-// Escreve aqui os dois middlewares
+export const globalLogger = (
+  req: Request,
+  _res: Response,
+  next: NextFunction,
+) => {
+  console.log(`Método: ${req.method} | URL: ${req.url}`);
+  next();
+};
+
+coursesRouter.use((_req: Request, _res: Response, next: NextFunction) => {
+  console.log("Entraste no módulo de cursos!");
+  next();
+});
 ```
 
-- [ ] Concluído
+- [x] Concluído
 
 ---
 

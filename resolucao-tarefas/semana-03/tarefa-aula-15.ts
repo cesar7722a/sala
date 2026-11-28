@@ -1,4 +1,4 @@
-import express, { NextFunction, Request, Response } from "express";
+import express from "express";
 import healthRoutes from "./routes/routes.health.js";
 import studentsRoutes from "./routes/students.routes.js";
 import instructorsRouter from "./routes/instructors.routes.js";
