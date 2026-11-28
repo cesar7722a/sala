@@ -303,10 +303,22 @@ function adminGuard(req: Request, res: Response, next: NextFunction) {
 **A tua solução:**
 
 ```typescript
-// Escreve aqui o middleware e a sua aplicação
+function adminGuard(req: Request, res: Response, next: NextFunction) {
+  const key = req.headers["x-admin-key"];
+
+  if (key !== "123") {
+    return res.status(403).json({ message: "Acesso negado!!" });
+  }
+
+  next();
+}
+
+coursesRouter.delete("/:id", adminGuard, (req: Request, res: Response) => {
+  res.send(`Curso ${req.params.id} eliminado com sucesso!`);
+});
 ```
 
-- [ ] Concluído
+- [x] Concluído
 
 ---
 
