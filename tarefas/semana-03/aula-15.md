@@ -225,10 +225,15 @@ coursesRouter.get("/featured", handler);
 **A tua solução:**
 
 ```typescript
-// Escreve aqui a tua solução e explica a ordem
+coursesRouter.get("/", getCourses);
+coursesRouter.get("/:id", getCoursesById);
+coursesRouter.get("/featured", getFeatured);
+coursesRouter.get("/:id/reviews", getReviews);
 ```
 
-- [ ] Concluído
+quando colocamos a url para featured e entra no /:id porque entende o featured como id
+
+- [x] Concluído
 
 ---
 

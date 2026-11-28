@@ -17,3 +17,12 @@ export function requestTime(req: Request, res: Response, next: NextFunction) {
 
   next();
 }
+
+export const globalLogger = (
+  req: Request,
+  _res: Response,
+  next: NextFunction,
+) => {
+  console.log(`Método: ${req.method} | URL: ${req.url}`);
+  next();
+};
