@@ -13,7 +13,7 @@
 - [x] **Aula 14:** [`aula-14-filtros-paginacao-e-erros.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes/semana-03/aula-14-filtros-paginacao-e-erros.md) — Parâmetros de busca (`req.query`), paginação defensiva e middleware global de erros de 4 parâmetros.
 - [x] **Aula 15:** [`aula-15-express-router-e-modularizacao.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes/semana-03/aula-15-express-router-e-modularizacao.md) — Organização modular com `express.Router()`, divisão em rotas e controllers, e prefixos de URL.
 - [x] **Aula 16:** [`aula-16-consolidacao-pratica-express-router.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes/semana-03/aula-16-consolidacao-pratica-express-router.md) — Consolidação Prática: Domínio de Express Router, Arquitectura Modular e Resolução Guiada de Exercícios.
-- [ ] **Aula 17:** Desafio Integrador da Semana 03 e Revisão Consolidada.
+- [x] **Aula 17:** [`aula-17-desafio-integrador-semana-03.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/anotacoes/semana-03/aula-17-desafio-integrador-semana-03.md) — Desafio Integrador da Semana 03: Construção da API v1 da Plataforma de Vídeo-Aulas e Fecho da Fase 2.
 
 ## 3. Exercícios Práticos da Semana
 Consulta o caderno de exercícios em: [`../../exercicios/semana-03.md`](file:///home/cesar-antonio/Documentos/projectos/nodejs-backend-roadmap/exercicios/semana-03.md)
