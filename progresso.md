@@ -6,11 +6,11 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 
 ## 1. Visão Geral do Progresso
 
-- **Estado Actual:** 🔄 Semana 03 em Curso (Fase 2: APIs e Arquitectura) — Protocolo HTTP, REST, Express.js e Organização Modular de Rotas
-- **Horas Acumuladas:** 25.5 / 108 horas previstas (25h30 concluídas: 18h00 Fase 1 + 7h30 Semana 03)
-- **Semanas Concluídas:** 2 / 12 semanas (Fase 1 100% concluída)
-- **Exercícios Concluídos:** 9 formais + Tarefas 01 a 04 da Aula 15/16 resolvidas com arquitectura modular (Controllers e Routers separados)
-- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (Arquitectura modular com `express.Router()`, separação estrita de Controllers para Cursos, Aulas, Categorias, Estudantes e Instrutores, catálogo com filtros e tratamento de erros)
+- **Estado Actual:** ✅ Semana 03 Concluída com Distinção! Próxima: Semana 04 — Arquitectura Controller-Service-Repository e SOLID
+- **Horas Acumuladas:** 27.0 / 108 horas previstas (27h00 concluídas: 18h00 Fase 1 + 9h00 Semana 03)
+- **Semanas Concluídas:** 3 / 12 semanas (Semanas 01, 02 e 03 100% concluídas)
+- **Exercícios Concluídos:** 10 (Exercícios formais 3.1, 3.2 e 3.3 + Desafio Integrador da Semana 03 concluído com sucesso)
+- **Funcionalidades Aplicadas na Empresa:** Plataforma de Vídeo-Aulas (API v1 completa com prefixo `/api/v1`, Router Centralizador, sub-recursos `/courses/:courseId/lessons`, guard administrativo `x-admin-key`, medição de performance `X-Response-Time`, paginação defensiva, filtros e middleware global de erros de 4 parâmetros)
 
 **Conteúdos abordados na preparação da Aula 15:**
 
@@ -29,7 +29,7 @@ Este ficheiro serve como o teu diário de bordo e painel de controlo técnico. D
 | :----: | :------------------------------------------------- | :-------------: | :------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | ----------------- |
 | **01** | Node.js, V8, libuv e Ambiente TypeScript           |     9 / 9h      |  ✅ Concluído  |                                                 Exercícios 1.1 a 1.3 e pipeline de build/start concluídos e a criação do repo hospital_api e as configurações aprendido durante a semana                                                  | Data 2026-11-14   |
 | **02** | JavaScript Assíncrono, Event Loop e Streams        |     9 / 9h      |  ✅ Concluído  |                                                              Exercícios 2.1 a 2.3, `safeAsync`, ADR-001, Ingestão de Vídeo e Bootstrap Integrador concluídos com distinção.                                                               | Data 2026-11-21   |
-| **03** | Protocolo HTTP, REST e Express.js                  |    7h30 / 9h    |  🔄 Em Curso   | Exercícios 3.1, 3.2 e 3.3 concluídos. Aulas 15 e 16 consolidadas: domínio prático de `express.Router()`, separação integral de Routes e Controllers (Cursos, Aulas, Categorias, Alunos, Instrutores) e montagem de múltiplos módulos. | -                 |
+| **03** | Protocolo HTTP, REST e Express.js                  |    9h00 / 9h    |  ✅ Concluído  | Exercícios 3.1, 3.2, 3.3 e Desafio Integrador v1 concluídos com distinção. API modular com prefixo `/api/v1`, sub-recursos de aulas, guard de admin, paginação defensiva e middleware global de erros. | Data 2026-11-28   |
 | **04** | Arquitectura Controller-Service-Repository & SOLID |     0 / 9h      | ⏳ Por Iniciar |                                                                                                                     -                                                                                                                     | -                 |
 | **05** | PostgreSQL, Modelação e Prisma ORM                 |     0 / 9h      | ⏳ Por Iniciar |                                                                                                                     -                                                                                                                     | -                 |
 | **06** | Validação com Zod e Tratamento Global de Erros     |     0 / 9h      | ⏳ Por Iniciar |                                                                                                                     -                                                                                                                     | -                 |
@@ -86,5 +86,5 @@ _Legenda de Estado: ⏳ Por Iniciar | 🔄 Em Curso | ✅ Concluído_
 - [x] **Concluir a Semana 02:** Event Loop, Promises, `Promise.allSettled`, Streams, Buffers, Magic Bytes e ADR-001.
 - [x] **Concluir a Fase 1 (Fundamentos de Node.js):** 18h00 / 108h cumpridas com 100% de aproveitamento.
 - [x] **Iniciar a Fase 2 (Semana 03 — Segunda-feira):** Protocolo HTTP, REST e Express.js — Arquitectura cliente-servidor, métodos HTTP, status codes, routing, middlewares e primeiros endpoints REST da plataforma de vídeo-aulas.
-- [ ] **Consolidar a Aula 15:** Praticar a modularização de rotas com `express.Router()`, separar Routes e Controllers, testar a integração de vários routers e dominar a ordem de declaração das rotas.
-- [ ] **Concluir a Semana 03:** Completar as 9 horas previstas, consolidar a arquitectura Express e preparar a transição para a Semana 04 — Controller-Service-Repository e SOLID.
+- [x] **Concluir a Semana 03:** Protocolo HTTP, REST e Express.js — 9h00 / 9h00 cumpridas com 100% de aproveitamento (CRUD, Middlewares, Paginação, Erros Globais e Desafio Integrador v1).
+- [ ] **Iniciar a Semana 04 (Segunda-feira):** Arquitectura Controller-Service-Repository e Princípios SOLID aplicados à Plataforma de Vídeo-Aulas.
