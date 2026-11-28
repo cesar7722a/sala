@@ -1,8 +1,13 @@
 import { Router } from "express";
 import { getLesson } from "../controllers/lessons.controllers.js";
+import { handler } from "../controllers/handler.controller.js";
 
-const lessonRouter = Router();
+const lessonsRouter = Router();
 
-lessonRouter.get("/", getLesson);
+lessonsRouter.get("/lessons", getLesson);
 
-export default lessonRouter;
+lessonsRouter.get("/courses/:courseId/lessons", handler);
+
+lessonsRouter.get("/courses/:courseId/lessons/:lessonId", handler);
+
+export default lessonsRouter;

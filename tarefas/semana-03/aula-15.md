@@ -348,10 +348,27 @@ apiRouter.use("/courses", coursesRouter);
 **A tua solução:**
 
 ```typescript
-// Escreve aqui a organização dos Routers
+import { Router } from "express";
+import coursesRouter from "./courses.routes";
+import categorriesRouter from "./categories.routes";
+import instructorsRouter from "./instructors.routes";
+import healthRoutes from "./routes.health";
+import studentsRoutes from "./students.routes";
+import lessonRouter from "./lessons.routes";
+
+const apiRouter = Router();
+
+apiRouter.use("/health", healthRoutes);
+apiRouter.use("/students", studentsRoutes);
+apiRouter.use("/instructors", instructorsRouter);
+apiRouter.use("/courses", coursesRouter);
+apiRouter.use("/lessons", lessonRouter);
+apiRouter.use("/categories", categorriesRouter);
+
+export default apiRouter;
 ```
 
-- [ ] Concluído
+- [x] Concluído
 
 ---
 
@@ -379,10 +396,24 @@ lessonsRouter.get("/courses/:courseId/lessons", handler);
 **A tua solução:**
 
 ```typescript
-// Escreve aqui a tua solução
+import { Router } from "express";
+import { getLesson } from "../controllers/lessons.controllers.js";
+import { handler } from "../controllers/handler.controller.js";
+
+const lessonsRouter = Router();
+
+lessonsRouter.get("/lessons", getLesson);
+
+lessonsRouter.get("/courses/:courseId/lessons", handler);
+
+lessonsRouter.get("/courses/:courseId/lessons/:lessonId", handler);
+
+export default lessonsRouter;
+
+apiRouter.use(lessonsRouter);
 ```
 
-- [ ] Concluído
+- [x] Concluído
 
 ---
 
